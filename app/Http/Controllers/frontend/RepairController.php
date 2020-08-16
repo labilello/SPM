@@ -21,14 +21,12 @@ class RepairController extends Controller
         ]);
     }
 
-    public function reparar($id)
+    public function reparar(Repair $repair)
     {
-        $repair = Repair::findOrFail($id);
 
 //        if($repair->status_id == Status::where('descripcion', 'Reparado')->get()->first()->id){
 //            return redirect('/ingresados');
 //        }
-
 
         return view('reparaciones\reparar', [
             'repair' => $repair,

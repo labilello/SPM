@@ -8,6 +8,11 @@
 {{--    </audio>--}}
 
     <div class="container-sm">
+        @if(session('status'))
+            <div class="alert alert-{{ session('type_status') }}" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
         <div class="accordion mb-4" id="accordionNew">
             <div class="card">
                 <div class="card-header" id="headingOne">
@@ -18,14 +23,8 @@
                     </h5>
                 </div>
 
-                <form id="collapseOne" class="collapse show card-body" aria-labelledby="headingOne" data-parent="#accordionNew" action="{{ route('accion.ingresar') }}" method="POST">
+                <form id="collapseOne" class="collapse show card-body" aria-labelledby="headingOne" data-parent="#accordionNew" action="{{ route('accion.reparaciones.ingresar') }}" method="POST">
                     @csrf
-                    @if(session('status'))
-                        <div class="alert alert-{{ session('type_status') }}" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
                     <h5 class="card-title" >Datos del producto</h5>
                     <div class="row">
                         <div class="col-sm mb-2">

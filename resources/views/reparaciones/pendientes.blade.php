@@ -3,7 +3,11 @@
 @section('content')
 
     <div class="container-sm">
-
+        @if(session('status'))
+            <div class="alert alert-{{ session('type_status') }}" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
         <div class="accordion" id="accordionFilter">
             <div class="card">
                 <div class="card-header" id="headingFilter">
@@ -41,7 +45,7 @@
                                 <td>{{ $repair->date_in }}</td>
                                 <td>{{ $repair->product->familia }}</td>
                                 <td>{{ $repair->nro_serie }}</td>
-                                <td><a href="{{ route('vista.reparaciones.reparar', ['id' => $repair->id ]) }}">Reparar</a></td>
+                                <td><a href="{{ route('vista.reparaciones.reparar', ['repair' => $repair->id ]) }}">Reparar</a></td>
 
                             </tr>
                         @endforeach

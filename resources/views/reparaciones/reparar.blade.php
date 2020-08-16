@@ -4,7 +4,7 @@
     <div class="container">
         <div class="card">
             <h4 class="card-header">Finalizacion de reparacion</h4>
-            <form class="show card-body" action="{{ route('accion.reparar', ['id' => $repair->id]) }}" method="POST">
+            <form class="show card-body" action="{{ route('accion.reparaciones.reparar', ['repair' => $repair->id]) }}" method="POST">
                 @csrf
                 @method('PATCH')
 

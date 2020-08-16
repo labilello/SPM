@@ -2,10 +2,6 @@
 
 @section('content')
     <div class="container">
-{{--        <div class="row justify-content-end">--}}
-{{--            <a role="button" class="btn btn-outline-secondary mb-3" href="{{ route('vista.reparaciones.pendientes') }}">Nuevo ingreso</a>--}}
-{{--        </div>--}}
-
         <div class="accordion" id="accordionFilter">
             <div class="card">
                 <div class="card-header" id="headingFilter">

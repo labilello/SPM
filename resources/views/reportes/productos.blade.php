@@ -14,7 +14,7 @@
                     </h5>
                 </div>
 
-                <form id="collapseOne" class="was-validated collapse card-body" aria-labelledby="headingOne" data-parent="#accordionOne" action="{{ route('accion.ingresar') }}" method="POST" enctype="multipart/form-data">
+                <form id="collapseOne" class="was-validated collapse card-body" aria-labelledby="headingOne" data-parent="#accordionOne" action="{{ route('home') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @if(session('status'))
                         <div class="alert alert-{{ session('type_status') }}" role="alert">

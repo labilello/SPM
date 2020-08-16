@@ -51,7 +51,7 @@ class RepairController extends Controller
         $movimiento->save();
 
         return back()->with([
-            'type_status' => 'success',
+                'type_status' => 'success',
                 'status' => "Producto con codigo $ingreso->product_id ingresado correctamente"
             ]);
 
@@ -60,10 +60,8 @@ class RepairController extends Controller
 
 
 
-    public function reparar(Request $request, $id)
+    public function reparar(Request $request, Repair $repair)
     {
-        $repair = Repair::find($id);
-
         $repair->note = $request->input('note');
         $repair->is_repair = (bool) $request->input('is_repair');
         $repair->status_id = Status::where('descripcion', 'Reparado')->get()->first()->id;
@@ -72,7 +70,7 @@ class RepairController extends Controller
         /* TABLA MOVIMIENTOS */
         $movimiento = new Movement();
         $movimiento->user_id = Auth::user()->getAuthIdentifier();
-        $movimiento->repair_id = $id;
+        $movimiento->repair_id = $repair->id;
         $movimiento->status_id = $repair->status_id;
 
         $movimiento->save();
@@ -82,30 +80,25 @@ class RepairController extends Controller
             'status' => "Producto con numero de serie $repair->nro_serie reparado. Enviar a deposito para su egreso"
         ]);
 
-
     }
 
-
-    public function egresar($id)
+    public function egresar(Repair $repair)
     {
-//        $repair = Repair::find($id);
-//
-//        $repair->note = $request->input('note');
-//        $repair->is_repair = (bool) $request->input('is_repair');
-//        $repair->status_id = Status::where('descripcion', 'Reparado')->get()->first()->id;
-//        $repair->save();
-//
-//        /* TABLA MOVIMIENTOS */
-//        $movimiento = new Movement();
-//        $movimiento->user_id = Auth::user()->getAuthIdentifier();
-//        $movimiento->repair_id = $id;
-//        $movimiento->status_id = $repair->status_id;
-//
-//        $movimiento->save();
+        $repair->date_out = now();
+        $repair->status_id = Status::where('descripcion', 'Egresado')->get()->first()->id;
+        $repair->save();
 
-        return redirect(route('vista.reparaciones.pendientes'))->with([
+        /* TABLA MOVIMIENTOS */
+        $movimiento = new Movement();
+        $movimiento->user_id = Auth::user()->getAuthIdentifier();
+        $movimiento->repair_id = $repair->id;
+        $movimiento->status_id = $repair->status_id;
+
+        $movimiento->save();
+
+        return redirect(route('vista.egresos.pendientes'))->with([
             'type_status' => 'success',
-            'status' => "Producto con numero de serie .. reparado. Enviar a deposito para su egreso"
+            'status' => "Producto con numero de serie {$repair->nro_serie} egresado."
         ]);
     }
 }

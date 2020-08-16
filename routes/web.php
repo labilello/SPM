@@ -40,7 +40,7 @@ Route::get('/reparaciones/pendientes', 'frontend\RepairController@pendientes')
     ->middleware('auth')
     ->name('vista.reparaciones.pendientes');
 
-Route::get('/reparaciones/reparar/{id}', 'frontend\RepairController@reparar')
+Route::get('/reparaciones/reparar/{repair}', 'frontend\RepairController@reparar')
     ->middleware('auth')
     ->name('vista.reparaciones.reparar');
 
@@ -59,15 +59,15 @@ Route::get('egresos/pendientes', 'frontend\EgressController@pendientes')
 
 Route::post('/reparaciones/pendientes/ingresar', 'backend\RepairController@ingresar')
     ->middleware('auth')
-    ->name('accion.ingresar');
+    ->name('accion.reparaciones.ingresar');
 
-Route::patch('/reparaciones/pendientes/reparar/{id}', 'backend\RepairController@reparar')
+Route::patch('/reparaciones/reparar/{repair}', 'backend\RepairController@reparar')
     ->middleware('auth')
-    ->name('accion.reparar');
+    ->name('accion.reparaciones.reparar');
 
-Route::delete('/reparaciones/pendientes/egresar/{id}', 'backend\RepairController@egresar')
+Route::delete('/reparaciones/egresar/{repair}', 'backend\RepairController@egresar')
     ->middleware('auth')
-    ->name('accion.egresar');
+    ->name('accion.reparaciones.egresar');
 
 //           *********************          //
 Auth::routes();
