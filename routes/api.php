@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+Route::get('productos/ean/{ean}', 'backend\ProductController@eanGet');
 
 //Route::apiResource('/products/out', 'Products\ProductsOutController');
 //Route::apiResource('/products/in', 'Products\ProductsInController');

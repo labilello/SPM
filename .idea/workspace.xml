@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6a734fb6-7894-44e1-b5d5-5b03a8283fb8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +175,7 @@
       <workItem from="1597266330749" duration="9259000" />
       <workItem from="1597323325348" duration="13639000" />
       <workItem from="1597408180424" duration="13948000" />
-      <workItem from="1597588296085" duration="7287000" />
+      <workItem from="1597588296085" duration="20951000" />
     </task>
     <servers />
   </component>
@@ -188,10 +191,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="418" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1360.728@0.0.1360.728" timestamp="1597418041557" />
-    <state x="98" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597589929172">
+    <state x="98" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597597347405">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="98" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1360.728@0.0.1360.728" timestamp="1597589929172" />
+    <state x="98" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1360.728@0.0.1360.728" timestamp="1597597347405" />
     <state x="544" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597326353500" />
     <state x="489" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597418250452">
       <screen x="0" y="0" width="1360" height="728" />

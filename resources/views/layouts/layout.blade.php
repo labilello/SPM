@@ -16,8 +16,6 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
 
     <!-- Styles -->
@@ -77,15 +75,12 @@
         </main>
     </div>
 
-
-
-    <script src="{{ asset('js/vendor/modernizr-3.8.0.min.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
         window.jQuery || document.write('<script src="{{ asset('js/vendor/jquery-3.4.1.min.js') }}"><\/script>')
     </script>
     <script src="{{ asset('js/plugins.js') }}"></script>
-{{--    @if(@route('reparaciones.index'))<script src="{{ asset('js/auditoria.js') }}"></script>@endif--}}
+    @if(@route('vista.reparaciones.nuevo'))<script src="{{ asset('js/main.js') }}"></script>@endif
     <script src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
 
     </body>
