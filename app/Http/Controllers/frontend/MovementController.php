@@ -10,8 +10,8 @@ class MovementController extends Controller
 {
     public function index()
     {
-        return view('movements', [
-            'movements' => Movement::all()
+        return view('reportes\movements', [
+            'movements' => Movement::paginate()
         ]);
     }
 }

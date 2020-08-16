@@ -136,19 +136,19 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ProyectosPHP\SPM\resources\views\reportes" />
+      <recent name="C:\ProyectosPHP\SPM\resources\views\reparaciones" />
+      <recent name="C:\ProyectosPHP\SPM\app\Http\Controllers\frontend" />
+      <recent name="C:\ProyectosPHP\SPM\public\js" />
+      <recent name="C:\ProyectosPHP\SPM\app\Http\Controllers" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\ProyectosPHP\SPM\resources\views\reportes" />
       <recent name="C:\ProyectosPHP\SPM\resources\views\egresos" />
       <recent name="C:\ProyectosPHP\SPM\resources\views\reparaciones" />
       <recent name="C:\ProyectosPHP\SPM\resources\views" />
       <recent name="C:\ProyectosPHP\SPM\resources\lang\es" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\ProyectosPHP\SPM\resources\views\reparaciones" />
-      <recent name="C:\ProyectosPHP\SPM\app\Http\Controllers\frontend" />
-      <recent name="C:\ProyectosPHP\SPM\public\js" />
-      <recent name="C:\ProyectosPHP\SPM\app\Http\Controllers" />
-      <recent name="C:\ProyectosPHP\SPM\app\Http\Controllers\Fontend" />
     </key>
   </component>
   <component name="RunManager">
@@ -172,7 +172,7 @@
       <workItem from="1597266330749" duration="9259000" />
       <workItem from="1597323325348" duration="13639000" />
       <workItem from="1597408180424" duration="13948000" />
-      <workItem from="1597588296085" duration="722000" />
+      <workItem from="1597588296085" duration="5746000" />
     </task>
     <servers />
   </component>
@@ -188,10 +188,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="418" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1360.728@0.0.1360.728" timestamp="1597418041557" />
-    <state x="98" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597418141494">
+    <state x="98" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597589929172">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="98" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1360.728@0.0.1360.728" timestamp="1597418141494" />
+    <state x="98" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1360.728@0.0.1360.728" timestamp="1597589929172" />
     <state x="544" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597326353500" />
     <state x="489" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597418250452">
       <screen x="0" y="0" width="1360" height="728" />
@@ -210,10 +210,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="260" y="98" key="IDE.errors.dialog/0.0.1360.728@0.0.1360.728" timestamp="1597081602649" />
-    <state x="444" y="86" key="NewPhpClassDialog" timestamp="1597418784630">
+    <state x="444" y="86" key="NewPhpClassDialog" timestamp="1597589876556">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="444" y="86" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1597418784630" />
+    <state x="444" y="86" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1597589876556" />
     <state x="181" y="8" key="SettingsEditor" timestamp="1597589051077">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -223,9 +223,10 @@
     </state>
     <state x="0" y="0" width="804" height="738" key="dock-window-1/0.0.1360.728@0.0.1360.728" timestamp="1597080229500" />
     <state x="747" y="5" width="983" height="1050" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1597333345231" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597333437721">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="441" y="158" width="672" height="475" key="search.everywhere.popup" timestamp="1597590908688">
+      <screen x="0" y="0" width="1360" height="728" />
     </state>
+    <state x="441" y="158" width="672" height="475" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1597590908688" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597333437721" />
   </component>
 </project>

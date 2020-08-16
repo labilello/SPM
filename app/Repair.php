@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Repair extends Model
 {
 
+    protected $casts = [
+        'is_repair' => 'boolean',
+    ];
+
     public function product () {
         return $this->belongsTo('App\Product', 'product_id');
     }

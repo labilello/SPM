@@ -44,8 +44,9 @@
 
                 <div class="card-body">
                     <div class="list-group">
-                        <a href="{{ route('vista.reportes.reparaciones') }}" class="btn btn-toolbar text-left mb-1" role="button">Listado de reparaciones</a>
-                        <a href="{{ route('vista.movimientos') }}" class="btn btn-toolbar text-left mb-1" role="button">Historial de movimientos</a>
+                        <a href="{{ route('vista.reportes.reparaciones') }}" class="btn btn-toolbar text-left mb-1" role="button">Reparaciones</a>
+                        <a href="{{ route('vista.reportes.productos') }}" class="btn btn-toolbar text-left mb-1" role="button">Productos</a>
+                        <a href="{{ route('vista.reportes.movimientos') }}" class="btn btn-toolbar text-left mb-1" role="button">Movimientos</a>
                     </div>
                 </div>
             </div>
