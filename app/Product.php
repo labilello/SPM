@@ -43,7 +43,7 @@ class Product extends Model
                 ];
                 $i++;
 
-                if($i >= 1000) {
+                if($i >= 5000) {
                     DB::table('products')->insertOrIgnore($data);
                     $i = 0;
                     $data = [];

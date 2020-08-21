@@ -28,20 +28,14 @@ class ProductController extends Controller
         $file = $request->file('archivo');
         $fileName = 'basestock.csv';
 
-        $file->move('uploads', $fileName);
+        $mifile = $file->move('uploads', $fileName);
 
-        $res = Product::importCsv(public_path('uploads/' . $fileName));
+        $res = Product::importCsv($mifile->getLinkTarget());
 
-//        return back()->with([
-//            'type_status' => $res === true ? 'success' : 'danger',
-//            'status' => $res === true ? 'Se insertaron correctamente los productos nuevos en la base de datos' : 'Error la insertar los productos nuevos en la base de datos'
-//        ]);
         return back()->with([
-            'type_status' => 'danger',
-            'status' => "Ya existe una reparacion en curso para este numero de serie. Producto no ingresado"
+            'type_status' => $res === true ? 'success' : 'danger',
+            'status' => $res === true ? 'Se insertaron correctamente los productos nuevos en la base de datos' : 'Error la insertar los productos nuevos en la base de datos'
         ]);
-
-
     }
 
 }

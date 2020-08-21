@@ -27,7 +27,7 @@ function solicitarProductosAJAX(e) {
         $('#spinner').addClass('d-flex');
         $('#detallesProducto').addClass('d-none');
 
-        fetch('http://localhost:8000/api/productos/ean/' + $('#codigoEan').val())
+        fetch('/api/productos/ean/' + $('#codigoEan').val())
             .then(function (response) {
                 if(response.ok) // codigo 200
                     response.json().then(json => { verficarCoinicidencias(json) } )
