@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Repair extends Model
 {
 
-    protected $casts = [
-        'is_repair' => 'boolean',
+    protected $dates = [
+        'date_in',
+        'date_out'
     ];
 
     public function product () {
@@ -22,4 +23,5 @@ class Repair extends Model
     public function movements() {
         return $this->hasMany('App\Movement');
     }
+
 }

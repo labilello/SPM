@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('productos/ean/{ean}', 'backend\ProductController@eanGet');
+Route::post('productos', 'backend\ProductController@updateBaseStock')->name('api.updateBaseStock');
 
 //Route::apiResource('/products/out', 'Products\ProductsOutController');
 //Route::apiResource('/products/in', 'Products\ProductsInController');

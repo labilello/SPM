@@ -26,6 +26,7 @@ Route::get('/movimientos', 'frontend\MovementController@index')
 Route::get('/productos', 'frontend\ProductController@index')
     ->middleware('auth')
     ->name('vista.reportes.productos');
+
 Route::get('reportes/reparaciones', 'frontend\ReportController@reparaciones')
     ->middleware('auth')
     ->name('vista.reportes.reparaciones');

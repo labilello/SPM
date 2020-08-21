@@ -4,6 +4,7 @@
 
 use App\User;
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 /*
@@ -22,7 +23,7 @@ $factory->define(User::class, function (Faker $faker) {
         'name' => "Leandro Alexis Bilello",
         'email' => "bilello79@gmail.com",
         'email_verified_at' => now(),
-        'password' => '$2y$10$nYDz4C8p11MNI1F5orh84u0Ex48Zwt4rIJgCfxj4mjXtPwD35cTz2', // password
+        'password' => Hash::make('asdasd'), // password
         'remember_token' => Str::random(10),
     ];
 });

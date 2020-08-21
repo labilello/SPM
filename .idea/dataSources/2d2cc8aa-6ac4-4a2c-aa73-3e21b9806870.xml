@@ -209,7 +209,7 @@
       <Position>2</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>&apos;2020-08-13 15:38:53&apos;</DefaultExpression>
+      <DefaultExpression>&apos;2020-08-18 15:36:33&apos;</DefaultExpression>
     </column>
     <column id="54" parent="11" name="date_out">
       <Position>3</Position>
@@ -223,14 +223,11 @@
     <column id="56" parent="11" name="note">
       <Position>5</Position>
       <DataType>text|0s</DataType>
-      <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
     <column id="57" parent="11" name="is_repair">
       <Position>6</Position>
       <DataType>tinyint(1)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
     <column id="58" parent="11" name="product_id">
       <Position>7</Position>

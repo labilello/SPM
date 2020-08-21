@@ -14,7 +14,8 @@ class CreateRepairsTable extends Migration
     public function up()
     {
         Schema::create('repairs', function (Blueprint $table) {
-            $table->id();
+
+            $table->id()->unsigned();
 
             $table->timestamp('date_in')->default(now());
             $table->timestamp('date_out')->nullable()->default(null);
@@ -22,22 +23,10 @@ class CreateRepairsTable extends Migration
             $table->text('note')->nullable()->default("");
             $table->boolean('is_repair')->nullable()->default(null);
 
-            $table->unsignedBigInteger('product_id');
-            $table->unsignedInteger('status_id');
+            $table->foreignId('product_id');
+            $table->foreignId('status_id');
 
             $table->timestamps();
-
-            // FOREING
-
-            $table
-                ->foreign('product_id')
-                ->references('codigo_unix')
-                ->on('products');
-
-            $table
-                ->foreign('status_id')
-                ->references('id')
-                ->on('status');
         });
     }
 

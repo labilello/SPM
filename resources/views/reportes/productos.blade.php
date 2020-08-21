@@ -3,6 +3,11 @@
 @section('content')
 
     <div class="container-sm">
+        @if(session('status'))
+            <div class="alert alert-{{ session('type_status') }}" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
 
         <div class="accordion mb-2" id="accordionOne">
             <div class="card">
@@ -14,15 +19,10 @@
                     </h5>
                 </div>
 
-                <form id="collapseOne" class="was-validated collapse card-body" aria-labelledby="headingOne" data-parent="#accordionOne" action="{{ route('home') }}" method="POST" enctype="multipart/form-data">
+                <form id="collapseOne" class="was-validated collapse card-body" aria-labelledby="headingOne" data-parent="#accordionOne" action="{{ route('api.updateBaseStock') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @if(session('status'))
-                        <div class="alert alert-{{ session('type_status') }}" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile" required>
+                        <input type="file" class="custom-file-input" id="customFile" name="archivo" required>
                         <label class="custom-file-label" for="customFile">Elija un archivo .csv</label>
                     </div>
                     <div class="row mt-sm-2">
@@ -34,21 +34,7 @@
             </div>
         </div>
 
-        <div class="accordion" id="accordionFilter">
-            <div class="card">
-                <div class="card-header" id="headingFilter">
-                    <h5 class="card-title mb-0">
-                        <button class="btn btn-link btn-block text-left p-0" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="true" aria-controls="collapseFilter">
-                            Filtros de busqueda
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseFilter" class="was-validated collapse card-body" aria-labelledby="headingFilter" data-parent="#accordionFilter">
-                    <input type="text" class="col-12 form-control">
-                </div>
-            </div>
-        </div>
-
+        @include('layouts.filtrotabla')
 
         <div class="row justify-content-center mt-4">
             <h4 class="col-12">Lista de productos</h4>
@@ -62,8 +48,6 @@
                             <th scope="col">Familia</th>
                             <th scope="col">EAN</th>
                             <th scope="col">Cod. Unico</th>
-                            <th scope="col">Costo Reposicion</th>
-                            <th scope="col">IVA</th>
                         </tr>
                     </thead>
                     <tbody class="table-hover">
@@ -75,8 +59,6 @@
                                 <td>{{ $product->familia }}</td>
                                 <td>{{ $product->codigo_barras }}</td>
                                 <td>{{ $product->codigo_unico }}</td>
-                                <td>${{ $product->costo_reposicion }}</td>
-                                <td>{{ $product->iva_percent }}</td>
                             </tr>
                         @endforeach
                     </tbody>

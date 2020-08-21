@@ -4,20 +4,7 @@
 
     <div class="container-sm">
 
-        <div class="accordion" id="accordionFilter">
-            <div class="card">
-                <div class="card-header" id="headingFilter">
-                    <h5 class="card-title mb-0">
-                        <button class="btn btn-link btn-block text-left p-0" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="true" aria-controls="collapseFilter">
-                            Filtros de busqueda
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseFilter" class="was-validated collapse card-body" aria-labelledby="headingFilter" data-parent="#accordionFilter">
-                    <input type="text" class="col-12 form-control">
-                </div>
-            </div>
-        </div>
+        @include('layouts.filtrotabla')
 
         <div class="row justify-content-center mt-4">
             <h4 class="col-12">Historial de reparaciones</h4>
@@ -49,12 +36,19 @@
                                     @if($repair->is_repair == null)
                                         -
                                     @elseif($repair->is_repair == true)
-                                        Si
+                                        <i class="far fa-check-circle" style="color: #00cc66; font-size: 20px"></i>
                                     @else
-                                        No
+                                        <i class="far fa-times-circle" style="color: red; font-size: 20px"></i>
                                     @endif
                                 </td>
                                 <td>{{ $repair->status->descripcion }}</td>
+                                <td class="text-center">
+                                    @if($repair->note != '')
+                                        <i class="fas fa-sticky-note" data-toggle="tooltip" data-placement="right" title="{{ $repair->note }}" style="color: #1f6fb2; font-size: 20px"></i>
+                                    @else
+                                        -
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

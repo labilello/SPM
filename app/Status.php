@@ -8,6 +8,7 @@ class Status extends Model
 {
     protected $table = 'status';
 
+
     public function movements(){
         return $this->hasMany('App\Movement', 'status_id');
     }

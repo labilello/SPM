@@ -55,7 +55,7 @@
 
                     <div class="justify-content-center d-none" id="spinner">
                         <div class="spinner-border" role="status">
-                            <span class="sr-only">Loading...</span>
+                            <span class="sr-only">Buscando producto...</span>
                         </div>
                     </div>
 
@@ -89,15 +89,6 @@
                                 <input type="text" class="form-control" id="marca" placeholder="-" readonly >
                             </div>
 
-                            <div class="form-group col-sm">
-                                <label for="costo">Costo Reposicion</label>
-                                <input type="text" class="form-control" id="costo" placeholder="-" readonly >
-                            </div>
-
-                            <div class="form-group col-sm">
-                                <label for="iva">IVA</label>
-                                <input type="text" class="form-control" id="iva" placeholder="-" readonly >
-                            </div>
                         </div>
                     </div>
 

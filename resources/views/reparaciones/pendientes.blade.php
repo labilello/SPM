@@ -8,25 +8,13 @@
                 {{ session('status') }}
             </div>
         @endif
-        <div class="accordion" id="accordionFilter">
-            <div class="card">
-                <div class="card-header" id="headingFilter">
-                    <h5 class="card-title mb-0">
-                        <button class="btn btn-link btn-block text-left p-0" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="true" aria-controls="collapseFilter">
-                            Filtros de busqueda
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseFilter" class="was-validated collapse card-body" aria-labelledby="headingFilter" data-parent="#accordionFilter">
-                    <input type="text" class="col-12 form-control">
-                </div>
-            </div>
-        </div>
+
+        @include('layouts.filtrotabla')
 
         <div class="row justify-content-center mt-4">
             <h4 class="col-12">Pendientes de reparacion ({{ $repairs->count() }})</h4>
             <div class="col">
-                <table class="table table-hover table-sm table-responsive-sm border-0">
+                <table class="table table-hover table-sm table-responsive-sm border-0" id="mytable">
                     <thead>
                         <tr class="border-0">
                             <th scope="col">#</th>
@@ -42,7 +30,7 @@
                             <tr>
                                 <td>{{ $repair->id }}</td>
                                 <td>{{ $repair->product->descripcion }}</td>
-                                <td>{{ $repair->date_in }}</td>
+                                <td>{{ $repair->date_in->format('d/m/Y H:i:s') }}</td>
                                 <td>{{ $repair->product->familia }}</td>
                                 <td>{{ $repair->nro_serie }}</td>
                                 <td><a href="{{ route('vista.reparaciones.reparar', ['repair' => $repair->id ]) }}">Reparar</a></td>

@@ -1,6 +1,19 @@
 $(document).ready(function() {
     $('#codigoEan').focus();
     $('#codigoEan').on('keypress', solicitarProductosAJAX);
+
+    $('[data-toggle="tooltip"]').tooltip()
+
+    $("#search").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($("table tbody tr"), function() {
+            if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+                $(this).hide();
+            else
+                $(this).show();
+        });
+    });
 });
 
 function solicitarProductosAJAX(e) {
@@ -27,6 +40,8 @@ function solicitarProductosAJAX(e) {
                         showConfirmButton: false
                     });
                     $('#codigoEan').val("");
+                    $('#spinner').addClass('d-none');
+                    $('#spinner').removeClass('d-flex');
                     // reproducirAudio()
                 }
             })
@@ -81,8 +96,6 @@ function insertarProducto(producto) {
     $('#codigoUnix').val(producto.codigo_unix);
     $('#codigoUnico').val(producto.codigo_unico);
     $('#marca').val(producto.marca);
-    $('#costo').val('$' + producto.costo_reposicion);
-    $('#iva').val(Math.round(producto.iva * 100) + '%');
 
     $('#spinner').addClass('d-none');
     $('#spinner').removeClass('d-flex');
@@ -91,7 +104,5 @@ function insertarProducto(producto) {
 
     $('#nroSerie').focus();
     $('#nroSerie').select();
-
-
 
 }

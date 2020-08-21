@@ -15,34 +15,15 @@ class CreateMovementsTable extends Migration
     public function up()
     {
         Schema::create('movements', function (Blueprint $table) {
-            $table->id();
 
-            $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('repair_id')->unsigned();
-            $table->bigInteger('status_id')->unsigned();
+            $table->id()->unsigned();
+
+            $table->foreignId('user_id');
+            $table->foreignId('repair_id');
+            $table->foreignId('status_id');
 
             $table->timestamps();
 
-
-            /* FOREIGN KEYS */
-
-            // Usuario
-            $table
-                ->foreign('user_id')
-                ->references('id')
-                ->on('users');
-
-            // Reparacion
-            $table
-                ->foreign('repair_id')
-                ->references('id')
-                ->on('repairs');
-
-            // Tipo
-            $table
-                ->foreign('status_id')
-                ->references('id')
-                ->on('status');
         });
 
     }
