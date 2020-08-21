@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="container">
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Modo de Desarrollo activado!</strong> No olvidar desactivar el modo de desarrollo antes de pasar a produccion.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
+{{--    <div class="alert alert-warning alert-dismissible fade show" role="alert">--}}
+{{--        <strong>Modo de Desarrollo activado!</strong> No olvidar desactivar el modo de desarrollo antes de pasar a produccion.--}}
+{{--        <button type="button" class="close" data-dismiss="alert" aria-label="Close">--}}
+{{--            <span aria-hidden="true">&times;</span>--}}
+{{--        </button>--}}
+{{--    </div>--}}
 
     <div class="row justify-content-center">
         <div class="col-md-5">
