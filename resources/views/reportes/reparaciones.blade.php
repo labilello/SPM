@@ -4,7 +4,41 @@
 
     <div class="container-sm">
 
-        @include('layouts.filtrotabla')
+        <div class="accordion" id="accordionFilter">
+            <div class="card">
+                <div class="card-header" id="headingFilter">
+                    <h5 class="card-title mb-0">
+                        <button class="btn btn-link btn-block text-left p-0" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="true" aria-controls="collapseFilter">
+                            Filtros de busqueda
+                        </button>
+                    </h5>
+                </div>
+                <form method="GET" action="{{ route('vista.filtro') }}" id="collapseFilter" class="collapse card-body" aria-labelledby="headingFilter" data-parent="#accordionFilter">
+                    @csrf
+                    <div class="row align-items-end">
+                        <div class="form-group col-sm-7">
+                            <label for="clave">Clave de busqueda:</label>
+                            <input type="text" class="form-control" id="clave" name="clave">
+                        </div>
+                        <div class="form-group col-sm-3 pl-1">
+                            <label for="buscarPor">Buscar por:</label>
+                            <select class="custom-select custom-select" name="buscarPor">
+                                <option value="product.descripcion" selected>Descripcion producto</option>
+                                <option value="product.familia">Familia producto</option>
+                                <option value="nro_serie">Nro. Serie</option>
+                                <option value="status.descripcion">Estado</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-2 pl-1">
+                            <input type="submit" class="btn btn-primary btn-sm w-100 mb-sm-1" value="Buscar">
+                            <a href="{{ route('vista.reportes.reparaciones') }}" class="btn btn-secondary btn-sm w-100">Eliminar filtros</a>
+                        </div>
+                    </div>
+                    <input type="hidden" value="reportes.reparaciones" name="vista">
+                    <input type="hidden" value="Repair" name="entidad">
+                </form>
+            </div>
+        </div> {{-- Filtro de tabla --}}
 
         <div class="row justify-content-center mt-4">
             <h4 class="col-12">Historial de reparaciones</h4>
@@ -24,7 +58,7 @@
                         </tr>
                     </thead>
                     <tbody class="table-hover">
-                        @foreach($repairs as $repair)
+                        @foreach($elements as $repair)
                             <tr>
                                 <td>{{ $repair->id }}</td>
                                 <td>{{ $repair->product->descripcion }}</td>
@@ -33,9 +67,9 @@
                                 <td>{{ $repair->product->familia }}</td>
                                 <td>{{ $repair->nro_serie }}</td>
                                 <td class="text-center">
-                                    @if($repair->is_repair == null)
+                                    @if($repair->is_repair === null)
                                         -
-                                    @elseif($repair->is_repair == true)
+                                    @elseif($repair->is_repair === true)
                                         <i class="far fa-check-circle" style="color: #00cc66; font-size: 20px"></i>
                                     @else
                                         <i class="far fa-times-circle" style="color: red; font-size: 20px"></i>
@@ -54,7 +88,7 @@
                     </tbody>
                 </table>
                 <div class="row">
-                    <div class="col">{{ $repairs->links() }}</div>
+                    <div class="col">{{ $elements->appends(request()->input())->links() }}</div>
                 </div>
             </div>
         </div>

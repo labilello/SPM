@@ -17,7 +17,7 @@ class RepairController extends Controller
     public function pendientes()
     {
         return view('reparaciones\pendientes', [
-            'repairs' => Repair::where('status_id', Status::where('descripcion', 'Ingresado')->get()->first()->id)->orderBy('date_in')->paginate()
+            'elements' => Repair::where('status_id', Status::where('descripcion', 'Ingresado')->get()->first()->id)->orderBy('date_in')->paginate()
         ]);
     }
 
@@ -29,7 +29,7 @@ class RepairController extends Controller
 //        }
 
         return view('reparaciones\reparar', [
-            'repair' => $repair,
+            'element' => $repair,
         ]);
     }
 }

@@ -13,6 +13,7 @@ class Product extends Model
     public $timestamps = false;
 
 
+
     public function movements(){
         return $this->hasMany('App\Movement', 'product_id');
     }

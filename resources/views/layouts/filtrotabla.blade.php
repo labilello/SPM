@@ -9,9 +9,9 @@
                 </h5>
             </div>
             <div id="collapseFilter" class="was-validated collapse card-body" aria-labelledby="headingFilter" data-parent="#accordionFilter">
-                {{--                    <input type="text" class="col-12 form-control">--}}
+                @csrf
                 <div class="form-group">
-                    <input type="text" class="form-control pull-right" id="search" placeholder="Type to search table...">
+                    <input type="text" class="form-control pull-right" id="search" placeholder="Escriba el elemento a buscar...">
                 </div>
             </div>
         </div>

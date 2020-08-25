@@ -23,16 +23,17 @@
                     </h5>
                 </div>
 
-                <form id="collapseOne" class="collapse show card-body" aria-labelledby="headingOne" data-parent="#accordionNew" action="{{ route('accion.reparaciones.ingresar') }}" method="POST">
+                <form id="collapseOne" class="collapse show card-body" aria-labelledby="headingOne" data-parent="#accordionNew" action="{{ route('accion.reparaciones.egresar') }}" method="POST">
                     @csrf
+                    @method('DELETE')
                     <h5 class="card-title" >Datos del producto</h5>
                     <div class="row">
                         <div class="col-sm mb-2">
                             <div class="input-group mr-lg-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">Codigo EAN</div>
+                                    <div class="input-group-text">Nro. Serie</div>
                                 </div>
-                                <input type="text" name="{{--codigoEan--}}codigoUnix" class="form-control" placeholder="1234567891011" required>
+                                <input type="text" name="nro_serie" class="form-control" placeholder="1234567891011" required>
                             </div>
                         </div>
                     </div>

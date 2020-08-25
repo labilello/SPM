@@ -20,13 +20,16 @@ function solicitarProductosAJAX(e) {
     if (e.keyCode === 13) {
         e.preventDefault();
 
+        // Deshabilito el input de nro de serie
         $('#nroSerie').prop( "disabled", true );
 
-
-        $('#spinner').removeClass('d-none');
-        $('#spinner').addClass('d-flex');
+        // Deshabilito el detalle del producto
         $('#detallesProducto').addClass('d-none');
 
+        // Muestro el spinner
+        mostrarSpinner(true);
+
+        // Busco los datos por API
         fetch('/api/productos/ean/' + $('#codigoEan').val())
             .then(function (response) {
                 if(response.ok) // codigo 200
@@ -39,9 +42,12 @@ function solicitarProductosAJAX(e) {
                         timerProgressBar: true,
                         showConfirmButton: false
                     });
+
                     $('#codigoEan').val("");
-                    $('#spinner').addClass('d-none');
-                    $('#spinner').removeClass('d-flex');
+
+                    // Escondo el spinner
+                    mostrarSpinner(false);
+
                     // reproducirAudio()
                 }
             })
@@ -75,14 +81,8 @@ async function verficarCoinicidencias(body) {
 
         if (opcion) { // Si eligio una opcion (no presiono cancelar), insertamos en tabla la opcion elegida
             insertarProducto(body[opcion]);
-            setTimeout(() => {
-                $('#nroSerie').prop( "disabled", false );
-                $('#nroSerie').focus();
-                $('#nroSerie').select();
-            }, 500)
         } else {
-            $('#spinner').addClass('d-none');
-            $('#spinner').removeClass('d-flex');
+            mostrarSpinner(false);
             $('#nroSerie').prop( "disabled", true );
         }
         return;
@@ -97,12 +97,23 @@ function insertarProducto(producto) {
     $('#codigoUnico').val(producto.codigo_unico);
     $('#marca').val(producto.marca);
 
-    $('#spinner').addClass('d-none');
-    $('#spinner').removeClass('d-flex');
+    mostrarSpinner(false);
+
     $('#detallesProducto').removeClass('d-none');
     $('#nroSerie').prop( "disabled", false );
 
     $('#nroSerie').focus();
     $('#nroSerie').select();
 
+}
+
+
+function mostrarSpinner(mostrar) {
+    if(mostrar == true) {
+        $('#spinner').removeClass('d-none');
+        $('#spinner').addClass('d-flex');
+    } else {
+        $('#spinner').addClass('d-none');
+        $('#spinner').removeClass('d-flex');
+    }
 }

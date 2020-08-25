@@ -18,7 +18,7 @@ class EgressController extends Controller
     public function pendientes()
     {
         return view('egresos\pendientes', [
-            'repairs' => Repair::where('status_id', Status::where('descripcion', 'Reparado')->get()->first()->id)->orderBy('date_in')->paginate()
+            'elements' => Repair::where('status_id', Status::where('descripcion', 'Reparado')->get()->first()->id)->orderBy('date_in')->paginate()
         ]);
     }
 }

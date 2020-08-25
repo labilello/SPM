@@ -55,6 +55,11 @@ Route::get('egresos/pendientes', 'frontend\EgressController@pendientes')
     ->middleware('auth')
     ->name('vista.egresos.pendientes');
 
+//           *********************          //
+
+Route::get('filtro', 'backend\FilterController@filtroTabla')
+    ->middleware('auth')
+    ->name('vista.filtro');
 
 // =============== BACKEND ===================
 
@@ -66,7 +71,7 @@ Route::patch('/reparaciones/reparar/{repair}', 'backend\RepairController@reparar
     ->middleware('auth')
     ->name('accion.reparaciones.reparar');
 
-Route::delete('/reparaciones/egresar/{repair}', 'backend\RepairController@egresar')
+Route::delete('/reparaciones/egresar/{repair?}', 'backend\RepairController@egresar')
     ->middleware('auth')
     ->name('accion.reparaciones.egresar');
 

@@ -24,7 +24,7 @@
         </div>
 
         <div class="row justify-content-center mt-4">
-            <h4 class="col-12">Pendientes de egreso ({{ $repairs->count() }})</h4>
+            <h4 class="col-12">Pendientes de egreso ({{ $elements->count() }})</h4>
             <div class="col">
                 <table class="table table-hover table-sm table-responsive-sm border-0">
                     <thead>
@@ -38,7 +38,7 @@
                         </tr>
                     </thead>
                     <tbody class="table-hover">
-                        @foreach($repairs as $repair)
+                        @foreach($elements as $repair)
                             <tr>
                                 <td>{{ $repair->id }}</td>
                                 <td>{{ $repair->product->descripcion }}</td>
@@ -50,7 +50,6 @@
                                         @csrf
                                         @method('DELETE')
                                         <input type="submit" value="Egresar" class="btn-link btn p-0">
-{{--                                        <a href="{{ route('vista.reparaciones.reparar', ['repair' => $repair->id ]) }}">Egresar</a>--}}
                                     </form>
                                 </td>
                             </tr>
@@ -58,7 +57,7 @@
                     </tbody>
                 </table>
                 <div class="row">
-                    <div class="col">{{ $repairs->links() }}</div>
+                    <div class="col">{{ $elements->appends(request()->input())->links() }}</div>
                 </div>
             </div>
         </div>

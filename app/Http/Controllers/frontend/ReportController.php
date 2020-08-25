@@ -11,7 +11,7 @@ class ReportController extends Controller
 {
     public function reparaciones(){
         return view('reportes\reparaciones', [
-            'repairs' => Repair::paginate()
+            'elements' => Repair::paginate()
         ]);
     }
 }

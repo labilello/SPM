@@ -29,7 +29,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a734fb6-7894-44e1-b5d5-5b03a8283fb8" name="Default Changelist" comment="" />
+    <list default="true" id="6a734fb6-7894-44e1-b5d5-5b03a8283fb8" name="Default Changelist" comment="update v1.0.0" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -179,19 +179,19 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\entornoPHP\SPM-master\app\Http\Controllers\backend" />
+      <recent name="C:\entornoPHP\SPM-master\app\Http\Controllers\frontend" />
+      <recent name="C:\ProyectosPHP\SPM\resources\views\reportes" />
+      <recent name="C:\ProyectosPHP\SPM\resources\views\reparaciones" />
+      <recent name="C:\ProyectosPHP\SPM\app\Http\Controllers\frontend" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\entornoPHP\SPM-master" />
       <recent name="C:\ProyectosPHP\SPM\resources\views\reportes" />
       <recent name="C:\ProyectosPHP\SPM\resources\views\egresos" />
       <recent name="C:\ProyectosPHP\SPM\resources\views\reparaciones" />
       <recent name="C:\ProyectosPHP\SPM\resources\views" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\ProyectosPHP\SPM\resources\views\reportes" />
-      <recent name="C:\ProyectosPHP\SPM\resources\views\reparaciones" />
-      <recent name="C:\ProyectosPHP\SPM\app\Http\Controllers\frontend" />
-      <recent name="C:\ProyectosPHP\SPM\public\js" />
-      <recent name="C:\ProyectosPHP\SPM\app\Http\Controllers" />
     </key>
   </component>
   <component name="RunManager">
@@ -220,7 +220,10 @@
       <workItem from="1597795443536" duration="864000" />
       <workItem from="1597842672932" duration="15416000" />
       <workItem from="1597928575922" duration="13907000" />
-      <workItem from="1598014705509" duration="7540000" />
+      <workItem from="1598014705509" duration="7710000" />
+      <workItem from="1598269524628" duration="1569000" />
+      <workItem from="1598272812593" duration="13796000" />
+      <workItem from="1598361464588" duration="13603000" />
     </task>
     <servers />
   </component>
@@ -304,15 +307,19 @@
     </state>
     <state x="0" y="0" width="804" height="738" key="dock-window-1/0.0.1360.728@0.0.1360.728" timestamp="1597080229500" />
     <state x="747" y="5" width="983" height="1050" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1597333345231" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1597871822903">
+    <state x="0" y="0" width="585" height="728" key="find.popup" timestamp="1598371776085">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1597871822903" />
-    <state x="443" y="158" width="675" height="475" key="search.everywhere.popup" timestamp="1597852210372">
+    <state x="0" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1598371776085" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1598374524180">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1598374524180" />
+    <state x="443" y="158" width="675" height="475" key="search.everywhere.popup" timestamp="1598370865507">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="441" y="158" width="672" height="475" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1597595643918" />
-    <state x="443" y="158" width="675" height="475" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1597852210372" />
+    <state x="443" y="158" width="675" height="475" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598370865507" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597333437721" />
   </component>
 </project>

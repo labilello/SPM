@@ -12,6 +12,10 @@ class Repair extends Model
         'date_out'
     ];
 
+    protected $casts = [
+        'is_repair' => 'boolean'
+    ];
+
     public function product () {
         return $this->belongsTo('App\Product', 'product_id');
     }

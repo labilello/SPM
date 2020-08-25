@@ -83,8 +83,20 @@ class RepairController extends Controller
 
     }
 
-    public function egresar(Repair $repair)
+    public function egresar(Repair $repair = null, Request $request)
     {
+        if(!$repair) {
+            $repair = Repair::where('nro_serie', '=', $request->get('nro_serie'))
+                ->where('status_id', '=', '2')
+                ->first();
+
+            if(!$repair)
+                return back()->with([
+                    'type_status' => 'danger',
+                    'status' => "No se encontro reparacion pendiende de ingreso con el nro de serie: {$request->get('nro_serie')}."
+                ]);
+        }
+
         $repair->date_out = now();
         $repair->status_id = Status::where('descripcion', 'Egresado')->get()->first()->id;
         $repair->save();
@@ -97,7 +109,7 @@ class RepairController extends Controller
 
         $movimiento->save();
 
-        return redirect(route('vista.egresos.pendientes'))->with([
+        return back()->with([
             'type_status' => 'success',
             'status' => "Producto con numero de serie {$repair->nro_serie} egresado."
         ]);
