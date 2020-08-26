@@ -26,7 +26,7 @@ class RepairController extends Controller
             ->count();
 
         if($cantRepairs > 0)
-            return back()->with([
+            return redirect(route('vista.reparaciones.nuevo'))->with([
                 'type_status' => 'danger',
                 'status' => "Ya existe una reparacion en curso para este numero de serie. Producto no ingresado"
             ]);
@@ -53,7 +53,7 @@ class RepairController extends Controller
 
         return back()->with([
                 'type_status' => 'success',
-                'status' => "Producto con codigo $ingreso->product_id ingresado correctamente"
+                'status' => "El producto {$ingreso->product_id->descripcion} fue ingresado correctamente"
             ]);
 
     }
@@ -63,6 +63,12 @@ class RepairController extends Controller
 
     public function reparar(Request $request, Repair $repair)
     {
+        if($repair->status->id > 1)
+            return redirect(route('vista.reparaciones.pendientes'))->with([
+                'type_status' => 'danger',
+                'status' => "La reparacion que intenta reparar se encuentra en estado \"{$repair->status->descripcion}\""
+            ]);
+
         $repair->note = $request->input('note');
         $repair->is_repair = (bool) $request->input('is_repair');
         $repair->status_id = Status::where('descripcion', 'Reparado')->get()->first()->id;
@@ -90,12 +96,20 @@ class RepairController extends Controller
                 ->where('status_id', '=', '2')
                 ->first();
 
+
             if(!$repair)
-                return back()->with([
+                return redirect(route('vista.egresos.nuevo'))->with([
                     'type_status' => 'danger',
                     'status' => "No se encontro reparacion pendiende de ingreso con el nro de serie: {$request->get('nro_serie')}."
                 ]);
+
         }
+
+        if($repair->status->id > 1)
+            return redirect(route('vista.egresos.pendientes'))->with([
+                'type_status' => 'danger',
+                'status' => "La reparacion que intenta reparar se encuentra en estado \"{$repair->status->descripcion}\""
+            ]);
 
         $repair->date_out = now();
         $repair->status_id = Status::where('descripcion', 'Egresado')->get()->first()->id;

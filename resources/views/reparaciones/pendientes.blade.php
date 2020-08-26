@@ -9,43 +9,7 @@
             </div>
         @endif
 
-
-        <div class="accordion" id="accordionFilter">
-            <div class="card">
-                <div class="card-header" id="headingFilter">
-                    <h5 class="card-title mb-0">
-                        <button class="btn btn-link btn-block text-left p-0" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="true" aria-controls="collapseFilter">
-                            Filtros de busqueda
-                        </button>
-                    </h5>
-                </div>
-                <form method="GET" action="{{ route('vista.filtro') }}" id="collapseFilter" class="collapse card-body" aria-labelledby="headingFilter" data-parent="#accordionFilter">
-                    @csrf
-                    <div class="row align-items-end">
-                        <div class="form-group col-sm-7">
-                            <label for="clave">Clave de busqueda:</label>
-                            <input type="text" class="form-control" id="clave" name="clave" required>
-                        </div>
-                        <div class="form-group col-sm-3 pl-1">
-                            <label for="buscarPor">Buscar por:</label>
-                            <select class="custom-select custom-select" name="buscarPor">
-                                <option value="nro_serie selected" selected>Nro. Serie</option>
-                                <option value="product.descripcion">Descripcion producto</option>
-                                <option value="product.familia">Familia producto</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-sm-2 pl-1">
-                            <input type="submit" class="btn btn-primary btn-sm w-100 mb-sm-1" value="Buscar">
-                            <a href="{{ route('vista.reparaciones.pendientes') }}" class="btn btn-secondary btn-sm w-100">Eliminar filtros</a>
-                        </div>
-                    </div>
-                    <input type="hidden" value="reparaciones.pendientes" name="vista">
-                    <input type="hidden" value="Repair" name="entidad">
-                </form>
-            </div>
-        </div> {{-- Filtro de tabla --}}
-
-
+        @include('layouts.filtrotabla')
 
         <div class="row justify-content-center mt-4">
             <h4 class="col-12">Pendientes de reparacion ({{ $elements->total() }})</h4>
@@ -74,9 +38,9 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div class="row">
-                    <div class="col">{{ $elements->appends(request()->input())->links() }}</div>
-                </div>
+{{--                <div class="row">--}}
+{{--                    <div class="col">{{ $elements->appends(request()->input())->links() }}</div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>

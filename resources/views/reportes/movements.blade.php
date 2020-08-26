@@ -57,7 +57,7 @@
                             <tr>
                                 <td>{{ $movement->id }}</td>
                                 <td>{{ $movement->status->descripcion }}</td>
-                                <td>{{ $movement->created_at }}</td>
+                                <td>{{ $movement->created_at->format('d/m/Y H:i:s') }}</td>
                                 <td>{{ $movement->repair->product->descripcion }}</td>
                                 <td>{{ $movement->repair->nro_serie }}</td>
                                 <td>{{ $movement->user->name }}</td>

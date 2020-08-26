@@ -23,10 +23,11 @@ class RepairController extends Controller
 
     public function reparar(Repair $repair)
     {
-
-//        if($repair->status_id == Status::where('descripcion', 'Reparado')->get()->first()->id){
-//            return redirect('/ingresados');
-//        }
+        if($repair->status->id > 1)
+            return back()->with([
+                'type_status' => 'danger',
+                'status' => "La reparacion que intenta reparar se encuentra en estado \"{$repair->status->descripcion}\""
+            ]);
 
         return view('reparaciones\reparar', [
             'element' => $repair,

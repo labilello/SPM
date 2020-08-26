@@ -62,8 +62,8 @@
                             <tr>
                                 <td>{{ $repair->id }}</td>
                                 <td>{{ $repair->product->descripcion }}</td>
-                                <td>{{ $repair->date_in }}</td>
-                                <td class="text-center">@if($repair->date_out == null) - @else {{ $repair->date_out }} @endif</td>
+                                <td>{{ $repair->date_in->format('d/m/Y H:i:s') }}</td>
+                                <td class="text-center">@if($repair->date_out == null) - @else {{ $repair->date_out->format('d/m/Y H:i:s') }} @endif</td>
                                 <td>{{ $repair->product->familia }}</td>
                                 <td>{{ $repair->nro_serie }}</td>
                                 <td class="text-center">
