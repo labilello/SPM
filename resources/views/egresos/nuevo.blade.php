@@ -33,7 +33,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">Nro. Serie</div>
                                 </div>
-                                <input type="text" name="nro_serie" class="form-control" placeholder="1234567891011" required>
+                                <input type="text" name="nro_serie" class="form-control" placeholder="1234567891011" id="requestFocus" required>
                             </div>
                         </div>
                     </div>
@@ -46,6 +46,6 @@
                 </form>
             </div>
         </div>
-
     </div>
+    
 @endsection

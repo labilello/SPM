@@ -1,5 +1,7 @@
 $(document).ready(function() {
+    $('#requestFocus').focus();
     $('#codigoEan').focus();
+
     $('#codigoEan').on('keypress', solicitarProductosAJAX);
 
     $('[data-toggle="tooltip"]').tooltip()
@@ -44,6 +46,7 @@ function solicitarProductosAJAX(e) {
                     });
 
                     $('#codigoEan').val("");
+                    $('#codigoEan').focus();
 
                     // Escondo el spinner
                     mostrarSpinner(false);
@@ -84,6 +87,7 @@ async function verficarCoinicidencias(body) {
         } else {
             mostrarSpinner(false);
             $('#nroSerie').prop( "disabled", true );
+            $('#codigoEan').focus();
         }
         return;
     }

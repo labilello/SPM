@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'frontend\HomeController@index')
     ->name('home');
 
+Route::get('/password/cambiar', 'Auth\ChangePasswordController@index')
+    ->middleware('auth')
+    ->name('vista.password.cambiar');
+
 //           *********************          //
 
 Route::get('/movimientos', 'frontend\MovementController@index')
@@ -75,5 +79,8 @@ Route::delete('/reparaciones/egresar/{repair?}', 'backend\RepairController@egres
     ->middleware('auth')
     ->name('accion.reparaciones.egresar');
 
+Route::post('/password/cambiar', 'Auth\ChangePasswordController@changePassword')
+    ->middleware('auth')
+    ->name('accion.password.change');
 //           *********************          //
 Auth::routes();

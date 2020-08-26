@@ -174,24 +174,24 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.data.extractors.current.export.id" value="SQL Updates" />
     <property name="database.data.extractors.current.id" value="SQL Updates" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/auth" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\entornoPHP\SPM-master\app\Http\Controllers\backend" />
-      <recent name="C:\entornoPHP\SPM-master\app\Http\Controllers\frontend" />
-      <recent name="C:\ProyectosPHP\SPM\resources\views\reportes" />
-      <recent name="C:\ProyectosPHP\SPM\resources\views\reparaciones" />
-      <recent name="C:\ProyectosPHP\SPM\app\Http\Controllers\frontend" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\entornoPHP\SPM-master\resources\views\auth" />
       <recent name="C:\entornoPHP\SPM-master" />
       <recent name="C:\ProyectosPHP\SPM\resources\views\reportes" />
       <recent name="C:\ProyectosPHP\SPM\resources\views\egresos" />
       <recent name="C:\ProyectosPHP\SPM\resources\views\reparaciones" />
-      <recent name="C:\ProyectosPHP\SPM\resources\views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\entornoPHP\SPM-master\resources\views\auth\passwords" />
+      <recent name="C:\entornoPHP\SPM-master\app\Http\Controllers\backend" />
+      <recent name="C:\entornoPHP\SPM-master\app\Http\Controllers\frontend" />
+      <recent name="C:\ProyectosPHP\SPM\resources\views\reportes" />
+      <recent name="C:\ProyectosPHP\SPM\resources\views\reparaciones" />
     </key>
   </component>
   <component name="RunManager">
@@ -224,7 +224,9 @@
       <workItem from="1598269524628" duration="1569000" />
       <workItem from="1598272812593" duration="13796000" />
       <workItem from="1598361464588" duration="13603000" />
-      <workItem from="1598444666555" duration="2661000" />
+      <workItem from="1598444666555" duration="3456000" />
+      <workItem from="1598454088798" duration="367000" />
+      <workItem from="1598456091935" duration="2257000" />
     </task>
     <servers />
   </component>
@@ -272,10 +274,11 @@
     </state>
     <state x="98" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1360.728@0.0.1360.728" timestamp="1597597347405" />
     <state x="544" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597326353500" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597764967346">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="491" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598457378237">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="489" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728@0.0.1360.728" timestamp="1597418250452" />
+    <state x="491" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598457378237" />
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597326613998" />
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.309.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1597764967346" />
     <state x="460" y="118" key="FileChooserDialogImpl" timestamp="1597014339027">
@@ -290,11 +293,11 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="260" y="98" key="IDE.errors.dialog/0.0.1360.728@0.0.1360.728" timestamp="1597081602649" />
-    <state x="446" y="86" key="NewPhpClassDialog" timestamp="1597869836894">
+    <state x="446" y="86" key="NewPhpClassDialog" timestamp="1598456994286">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="444" y="86" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1597589876556" />
-    <state x="446" y="86" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1597869836894" />
+    <state x="446" y="86" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1598456994286" />
     <state x="181" y="8" key="SettingsEditor" timestamp="1597589051077">
       <screen x="0" y="0" width="1360" height="728" />
     </state>

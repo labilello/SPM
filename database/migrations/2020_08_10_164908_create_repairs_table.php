@@ -19,7 +19,7 @@ class CreateRepairsTable extends Migration
 
             $table->timestamp('date_in')->default(now());
             $table->timestamp('date_out')->nullable()->default(null);
-            $table->string('nro_serie', 20);
+            $table->string('nro_serie', 70);
             $table->text('note')->nullable()->default(null);
             $table->boolean('is_repair')->nullable()->default(null);
 
