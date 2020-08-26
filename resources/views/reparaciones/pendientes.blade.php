@@ -9,8 +9,6 @@
             </div>
         @endif
 
-        @include('layouts.filtrotabla')
-
         <div class="row justify-content-center mt-4">
             <h4 class="col-12">Pendientes de reparacion ({{ $elements->total() }})</h4>
             <div class="col">
@@ -38,9 +36,9 @@
                         @endforeach
                     </tbody>
                 </table>
-{{--                <div class="row">--}}
-{{--                    <div class="col">{{ $elements->appends(request()->input())->links() }}</div>--}}
-{{--                </div>--}}
+		<div class="row">
+                    <div class="col">{{ $elements->appends(request()->input())->links() }}</div>
+                </div>
             </div>
         </div>
     </div>
