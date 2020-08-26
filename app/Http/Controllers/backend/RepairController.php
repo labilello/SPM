@@ -53,7 +53,7 @@ class RepairController extends Controller
 
         return back()->with([
                 'type_status' => 'success',
-                'status' => "El producto {$ingreso->product_id->descripcion} fue ingresado correctamente"
+                'status' => "El producto \"{$ingreso->product->descripcion}\" fue ingresado correctamente"
             ]);
 
     }
