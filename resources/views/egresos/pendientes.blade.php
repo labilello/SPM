@@ -10,7 +10,7 @@
         @endif
 
         <div class="row justify-content-center mt-4">
-            <h4 class="col-12">Pendientes de egreso ({{ $elements->count() }})</h4>
+            <h4 class="col-12">Pendientes de egreso ({{ $elements->total() }})</h4>
             <div class="col">
                 <table class="table table-hover table-sm table-responsive-sm border-0">
                     <thead>
