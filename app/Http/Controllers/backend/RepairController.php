@@ -105,7 +105,7 @@ class RepairController extends Controller
 
         }
 
-        if($repair->status->id > 1)
+        if($repair->status->id > 2)
             return redirect(route('vista.egresos.pendientes'))->with([
                 'type_status' => 'danger',
                 'status' => "La reparacion que intenta reparar se encuentra en estado \"{$repair->status->descripcion}\""
