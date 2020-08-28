@@ -1,22 +1,70 @@
 $(document).ready(function() {
+    // vista.reparaciones.nuevo
     $('#requestFocus').focus();
     $('#codigoEan').focus();
 
     $('#codigoEan').on('keypress', solicitarProductosAJAX);
 
-    $('[data-toggle="tooltip"]').tooltip()
+    // vista.reparaciones.pendientes
+    $('#buscarAPI').on('click', busquedaReparacionesAPI)
 
-    $("#search").keyup(function(){
-        _this = this;
-        // Show only matching TR, hide rest of them
-        $.each($("table tbody tr"), function() {
-            if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
-                $(this).hide();
-            else
-                $(this).show();
-        });
-    });
 });
+
+function busquedaReparacionesAPI(e) {
+    e.preventDefault();
+
+    let key = $('#clave').val();
+    let filtro = $('#buscarPor').val();
+    let status = $('#status').val();
+    let entidad = $('#entidad').val();
+
+    fetch('/api/' + entidad + '/' + status + '/' + filtro + '/' + key)
+        .then(function (response) {
+            if(response.ok) // codigo 200
+                response.json().then(json => { cargarTablaBusquedaAPI(json) } )
+            else { // codigo 404
+                Swal.fire({
+                    title: 'Sin coincidencias!',
+                    text: 'No se encontraron coincidencias para la clave ingresada',
+                    timer: 2000,
+                    timerProgressBar: true,
+                    showConfirmButton: false
+                });
+
+                $('#clave').val("");
+            }
+        })
+        .catch(function(error) {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Hubo un problema con la petición. Verifique la conexion y reintente',
+                timer: 5000,
+                timerProgressBar: true,
+                showConfirmButton: false
+            });
+
+            $('#clave').val("");
+        })
+}
+
+function cargarTablaBusquedaAPI(json) {
+
+    $('#mytable tbody').empty();
+    $('.pagination').empty();
+    $('#totalTabla').text(json.length);
+
+    json.forEach(reparacion => {
+        $('#mytable tbody').append("" +
+            "<tr>" +
+                `<td>${reparacion.id}</td>` +
+                `<td>${reparacion.product.descripcion}</td>` +
+                `<td>${reparacion.date_in}</td>` +
+                `<td>${reparacion.product.familia}</td>` +
+                `<td>${reparacion.nro_serie}</td>` +
+                `<td><a href='/reparaciones/reparar/${reparacion.id}'>Reparar</a></td>` +
+            `</tr>`);
+    });
+}
 
 function solicitarProductosAJAX(e) {
     if (e.keyCode === 13) {
@@ -55,7 +103,21 @@ function solicitarProductosAJAX(e) {
                 }
             })
             .catch(function(error) {
-                console.log('Hubo un problema con la petición Fetch:' + error.message);
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Hubo un problema con la petición. Verifique la conexion y reintente',
+                    timer: 5000,
+                    timerProgressBar: true,
+                    showConfirmButton: false
+                });
+
+                $('#codigoEan').val("");
+                $('#codigoEan').focus();
+
+                // Escondo el spinner
+                mostrarSpinner(false);
+
+                // reproducirAudio()
             })
     }
 }

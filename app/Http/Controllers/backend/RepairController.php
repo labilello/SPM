@@ -59,8 +59,6 @@ class RepairController extends Controller
     }
 
 
-
-
     public function reparar(Request $request, Repair $repair)
     {
         if($repair->status->id > 1)

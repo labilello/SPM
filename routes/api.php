@@ -18,8 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('productos/ean/{ean}', 'backend\ProductController@eanGet');
+Route::get('productos/ean/{ean}', 'backend\API\ProductController@getByEan');
+Route::get('reparaciones/{status}/nroserie/{nroserie?}', 'backend\API\RepairController@getByStatusSerie');
+
+
 Route::post('productos', 'backend\ProductController@updateBaseStock')->name('api.updateBaseStock');
+
 
 //Route::apiResource('/products/out', 'Products\ProductsOutController');
 //Route::apiResource('/products/in', 'Products\ProductsInController');

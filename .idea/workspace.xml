@@ -177,6 +177,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/auth" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -227,6 +228,8 @@
       <workItem from="1598444666555" duration="3456000" />
       <workItem from="1598454088798" duration="367000" />
       <workItem from="1598456091935" duration="2257000" />
+      <workItem from="1598617964284" duration="118000" />
+      <workItem from="1598618274701" duration="5449000" />
     </task>
     <servers />
   </component>
@@ -274,10 +277,11 @@
     </state>
     <state x="98" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1360.728@0.0.1360.728" timestamp="1597597347405" />
     <state x="544" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597326353500" />
-    <state x="491" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598457378237">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="491" y="-576" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598618968556">
+      <screen x="0" y="-768" width="1366" height="728" />
     </state>
     <state x="489" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728@0.0.1360.728" timestamp="1597418250452" />
+    <state x="491" y="-576" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/0.-768.1366.728@0.-768.1366.728" timestamp="1598618968556" />
     <state x="491" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598457378237" />
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597326613998" />
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.309.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1597764967346" />
