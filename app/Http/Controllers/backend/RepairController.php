@@ -9,6 +9,7 @@ use App\Repair;
 use App\Status;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use phpDocumentor\Reflection\Types\Boolean;
 
 class RepairController extends Controller
@@ -26,7 +27,7 @@ class RepairController extends Controller
             ->count();
 
         if($cantRepairs > 0)
-            return redirect(route('vista.reparaciones.nuevo'))->with([
+            return redirect(route('vista.reparaciones.nuevo') . '?correcto=false')->with([
                 'type_status' => 'danger',
                 'status' => "Ya existe una reparacion en curso para este numero de serie. Producto no ingresado"
             ]);
@@ -51,7 +52,7 @@ class RepairController extends Controller
 
         $movimiento->save();
 
-        return back()->with([
+        return redirect(route('vista.reparaciones.nuevo') . '?correcto=true')->with([
                 'type_status' => 'success',
                 'status' => "El producto \"{$ingreso->product->descripcion}\" fue ingresado correctamente"
             ]);
@@ -62,7 +63,7 @@ class RepairController extends Controller
     public function reparar(Request $request, Repair $repair)
     {
         if($repair->status->id > 1)
-            return redirect(route('vista.reparaciones.pendientes'))->with([
+            return redirect( route('vista.reparaciones.pendientes') )->with([
                 'type_status' => 'danger',
                 'status' => "La reparacion que intenta reparar se encuentra en estado \"{$repair->status->descripcion}\""
             ]);
@@ -80,7 +81,7 @@ class RepairController extends Controller
 
         $movimiento->save();
 
-        return redirect(route('vista.reparaciones.pendientes'))->with([
+        return redirect( route('vista.reparaciones.pendientes') )->with([
             'type_status' => 'success',
             'status' => "Producto con numero de serie $repair->nro_serie reparado. Enviar a deposito para su egreso"
         ]);
@@ -89,6 +90,7 @@ class RepairController extends Controller
 
     public function egresar(Repair $repair = null, Request $request)
     {
+        $urlBack = explode('?', back()->getTargetUrl());
         if(!$repair) {
             $repair = Repair::where('nro_serie', '=', $request->get('nro_serie'))
                 ->where('status_id', '=', '2')
@@ -96,7 +98,7 @@ class RepairController extends Controller
 
 
             if(!$repair)
-                return redirect(route('vista.egresos.nuevo'))->with([
+                return redirect($urlBack[0] . '?correcto=false')->with([
                     'type_status' => 'danger',
                     'status' => "No se encontro reparacion pendiende de ingreso con el nro de serie: {$request->get('nro_serie')}."
                 ]);
@@ -104,7 +106,7 @@ class RepairController extends Controller
         }
 
         if($repair->status->id > 2)
-            return redirect(route('vista.egresos.pendientes'))->with([
+            return redirect($urlBack[0] . '?correcto=false')->with([
                 'type_status' => 'danger',
                 'status' => "La reparacion que intenta reparar se encuentra en estado \"{$repair->status->descripcion}\""
             ]);
@@ -121,7 +123,8 @@ class RepairController extends Controller
 
         $movimiento->save();
 
-        return back()->with([
+
+        return redirect( $urlBack[0] . '?correcto=true' )->with([
             'type_status' => 'success',
             'status' => "Producto con numero de serie {$repair->nro_serie} egresado."
         ]);

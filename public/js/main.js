@@ -5,66 +5,21 @@ $(document).ready(function() {
 
     $('#codigoEan').on('keypress', solicitarProductosAJAX);
 
-    // vista.reparaciones.pendientes
+    // filtro vistas.pendientes
     $('#buscarAPI').on('click', busquedaReparacionesAPI)
+
+    // Sonidos
+    var correcto = document.getElementById("correcto"); // Audio de control
+    var error = document.getElementById("error"); // Audio de control
+
+    if (location.href.indexOf("?correcto=true") != -1)
+        reproducirAudio(correcto);
+    else if (location.href.indexOf("?correcto=false") != -1)
+        reproducirAudio(error);
+
 
 });
 
-function busquedaReparacionesAPI(e) {
-    e.preventDefault();
-
-    let key = $('#clave').val();
-    let filtro = $('#buscarPor').val();
-    let status = $('#status').val();
-    let entidad = $('#entidad').val();
-
-    fetch('/api/' + entidad + '/' + status + '/' + filtro + '/' + key)
-        .then(function (response) {
-            if(response.ok) // codigo 200
-                response.json().then(json => { cargarTablaBusquedaAPI(json) } )
-            else { // codigo 404
-                Swal.fire({
-                    title: 'Sin coincidencias!',
-                    text: 'No se encontraron coincidencias para la clave ingresada',
-                    timer: 2000,
-                    timerProgressBar: true,
-                    showConfirmButton: false
-                });
-
-                $('#clave').val("");
-            }
-        })
-        .catch(function(error) {
-            Swal.fire({
-                title: 'Error!',
-                text: 'Hubo un problema con la petición. Verifique la conexion y reintente',
-                timer: 5000,
-                timerProgressBar: true,
-                showConfirmButton: false
-            });
-
-            $('#clave').val("");
-        })
-}
-
-function cargarTablaBusquedaAPI(json) {
-
-    $('#mytable tbody').empty();
-    $('.pagination').empty();
-    $('#totalTabla').text(json.length);
-
-    json.forEach(reparacion => {
-        $('#mytable tbody').append("" +
-            "<tr>" +
-                `<td>${reparacion.id}</td>` +
-                `<td>${reparacion.product.descripcion}</td>` +
-                `<td>${reparacion.date_in}</td>` +
-                `<td>${reparacion.product.familia}</td>` +
-                `<td>${reparacion.nro_serie}</td>` +
-                `<td><a href='/reparaciones/reparar/${reparacion.id}'>Reparar</a></td>` +
-            `</tr>`);
-    });
-}
 
 function solicitarProductosAJAX(e) {
     if (e.keyCode === 13) {
@@ -99,7 +54,7 @@ function solicitarProductosAJAX(e) {
                     // Escondo el spinner
                     mostrarSpinner(false);
 
-                    // reproducirAudio()
+                    reproducirAudio(error);
                 }
             })
             .catch(function(error) {
@@ -117,7 +72,7 @@ function solicitarProductosAJAX(e) {
                 // Escondo el spinner
                 mostrarSpinner(false);
 
-                // reproducirAudio()
+                reproducirAudio(error);
             })
     }
 }
@@ -171,8 +126,9 @@ function insertarProducto(producto) {
     $('#nroSerie').focus();
     $('#nroSerie').select();
 
-}
+    reproducirAudio(correcto);
 
+}
 
 function mostrarSpinner(mostrar) {
     if(mostrar == true) {
@@ -182,4 +138,71 @@ function mostrarSpinner(mostrar) {
         $('#spinner').addClass('d-none');
         $('#spinner').removeClass('d-flex');
     }
+}
+
+// ============== BUSQUEDA PRODUCTOS API =================
+function busquedaReparacionesAPI(e) {
+    e.preventDefault();
+
+    let key = $('#clave').val();
+    let filtro = $('#buscarPor').val();
+    let status = $('#status').val();
+    let entidad = $('#entidad').val();
+
+    fetch('/api/' + entidad + '/' + status + '/' + filtro + '/' + key)
+        .then(function (response) {
+            if(response.ok) // codigo 200
+                response.json().then(json => { cargarTablaBusquedaAPI(json) } )
+            else { // codigo 404
+                Swal.fire({
+                    title: 'Sin coincidencias!',
+                    text: 'No se encontraron coincidencias para la clave ingresada',
+                    timer: 2000,
+                    timerProgressBar: true,
+                    showConfirmButton: false
+                });
+
+                $('#clave').val("");
+            }
+        })
+        .catch(function(error) {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Hubo un problema con la petición. Verifique la conexion y reintente',
+                timer: 5000,
+                timerProgressBar: true,
+                showConfirmButton: false
+            });
+
+            $('#clave').val("");
+        })
+}
+
+function cargarTablaBusquedaAPI(json) {
+
+    $('#mytable tbody').empty();
+    $('.pagination').empty();
+    $('#totalTabla').text(json.length);
+
+    json.forEach(reparacion => {
+        $('#mytable tbody').append("" +
+            "<tr>" +
+            `<td>${reparacion.id}</td>` +
+            `<td>${reparacion.product.descripcion}</td>` +
+            `<td>${reparacion.date_in}</td>` +
+            `<td>${reparacion.product.familia}</td>` +
+            `<td>${reparacion.nro_serie}</td>` +
+            `<td><a href='/reparaciones/reparar/${reparacion.id}'>Reparar</a></td>` +
+            `</tr>`);
+    });
+}
+
+
+function reproducirAudio(audio) {
+    if (!audio.paused) {
+        audio.pause();
+        audio.currentTime = 0;
+    }
+
+    audio.play();
 }

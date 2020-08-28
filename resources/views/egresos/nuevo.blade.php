@@ -47,5 +47,12 @@
             </div>
         </div>
     </div>
-    
+    <audio id="correcto" class="d-none" controls>
+        <source type="audio/mp3" src="{{ asset('src/correcto.mp3') }}">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="error" class="d-none" controls>
+        <source type="audio/mp3" src="{{ asset('src/error.mp3') }}">
+        Your browser does not support the audio element.
+    </audio>
 @endsection

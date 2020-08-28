@@ -2,11 +2,6 @@
 
 @section('content')
 
-{{--    <audio id="audio" controls>--}}
-{{--        <source type="audio/wav" src="{{ asset('src/error.wav') }}">--}}
-{{--        Your browser does not support the audio element.--}}
-{{--    </audio>--}}
-
     <div class="container-sm">
         @if(session('status'))
             <div class="alert alert-{{ session('type_status') }}" role="alert">
@@ -96,5 +91,13 @@
             </div>
         </div>
 
+        <audio id="correcto" class="d-none" controls>
+            <source type="audio/mp3" src="{{ asset('src/correcto.mp3') }}">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="error" class="d-none" controls>
+            <source type="audio/mp3" src="{{ asset('src/error.mp3') }}">
+            Your browser does not support the audio element.
+        </audio>
     </div>
 @endsection
