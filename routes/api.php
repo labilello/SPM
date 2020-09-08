@@ -23,6 +23,7 @@ Route::get('reparaciones/{status}/nroserie/{nroserie?}', 'backend\API\RepairCont
 
 
 Route::post('productos', 'backend\ProductController@updateBaseStock')->name('api.updateBaseStock');
+Route::post('egresos/envio/{shipment}/add', 'backend\API\EgressController@addToShipment')->name('api.addToShipment');
 
 
 //Route::apiResource('/products/out', 'Products\ProductsOutController');

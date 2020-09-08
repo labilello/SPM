@@ -65,10 +65,16 @@
                                 <td>{{ $repair->product->familia }}</td>
                                 <td>{{ $repair->nro_serie }}</td>
                                 <td>
-                                    <form method="POST" action="{{ route('accion.reparaciones.egresar', ['repair' => $repair->id]) }}">
+                                    <button class="dropdown-item"
+                                            onclick="event.preventDefault();
+                                            window.open('/egresos/pendientes/remito/{{ $repair->id }}');
+                                            $('#egresar-form').submit();"
+                                    >
+                                        Egresar
+                                    </button>
+                                    <form method="POST" action="{{ route('accion.reparaciones.egresar', ['repair' => $repair->id]) }}" id="egresar-form">
                                         @csrf
                                         @method('DELETE')
-                                        <input type="submit" value="Egresar" class="btn-link btn p-0">
                                     </form>
                                 </td>
                             </tr>

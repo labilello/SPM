@@ -28,4 +28,8 @@ class Repair extends Model
         return $this->hasMany('App\Movement');
     }
 
+    public function shipment() {
+        return $this->belongsTo('App\Shipment');
+    }
+
 }

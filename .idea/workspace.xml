@@ -160,6 +160,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/vendor/flynsarmy/csv-seeder" />
       <path value="$PROJECT_DIR$/vendor/league/csv" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
     </include_path>
   </component>
   <component name="ProjectId" id="1fsjmR1nmC5VLE6Rh9XKlYFbPqS" />
@@ -174,25 +179,25 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.data.extractors.current.export.id" value="SQL Updates" />
     <property name="database.data.extractors.current.id" value="SQL Updates" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/auth" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/egresos" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\entornoPHP\SPM-master\public\src\img" />
+      <recent name="C:\entornoPHP\SPM-master\public\js" />
+      <recent name="C:\entornoPHP\SPM-master\resources\views\egresos" />
+      <recent name="C:\entornoPHP\SPM-master\resources\views\auth\passwords" />
+      <recent name="C:\entornoPHP\SPM-master\app\Http\Controllers\backend" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\entornoPHP\SPM-master\resources\views\egresos" />
+      <recent name="C:\entornoPHP\SPM-master\public\src\img" />
       <recent name="C:\entornoPHP\SPM-master\resources\views\auth" />
       <recent name="C:\entornoPHP\SPM-master" />
       <recent name="C:\ProyectosPHP\SPM\resources\views\reportes" />
-      <recent name="C:\ProyectosPHP\SPM\resources\views\egresos" />
-      <recent name="C:\ProyectosPHP\SPM\resources\views\reparaciones" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\entornoPHP\SPM-master\resources\views\auth\passwords" />
-      <recent name="C:\entornoPHP\SPM-master\app\Http\Controllers\backend" />
-      <recent name="C:\entornoPHP\SPM-master\app\Http\Controllers\frontend" />
-      <recent name="C:\ProyectosPHP\SPM\resources\views\reportes" />
-      <recent name="C:\ProyectosPHP\SPM\resources\views\reparaciones" />
     </key>
   </component>
   <component name="RunManager">
@@ -229,7 +234,15 @@
       <workItem from="1598454088798" duration="367000" />
       <workItem from="1598456091935" duration="2257000" />
       <workItem from="1598617964284" duration="118000" />
-      <workItem from="1598618274701" duration="9247000" />
+      <workItem from="1598618274701" duration="9881000" />
+      <workItem from="1598885607936" duration="6702000" />
+      <workItem from="1598920367767" duration="101000" />
+      <workItem from="1598968822991" duration="14555000" />
+      <workItem from="1599051602141" duration="601000" />
+      <workItem from="1599223866632" duration="6622000" />
+      <workItem from="1599232639388" duration="3781000" />
+      <workItem from="1599486180052" duration="14333000" />
+      <workItem from="1599573472220" duration="16851000" />
     </task>
     <servers />
   </component>
@@ -277,12 +290,12 @@
     </state>
     <state x="98" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1360.728@0.0.1360.728" timestamp="1597597347405" />
     <state x="544" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597326353500" />
-    <state x="491" y="-576" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598618968556">
-      <screen x="0" y="-768" width="1366" height="728" />
+    <state x="491" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599582387573">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="489" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728@0.0.1360.728" timestamp="1597418250452" />
     <state x="491" y="-576" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/0.-768.1366.728@0.-768.1366.728" timestamp="1598618968556" />
-    <state x="491" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598457378237" />
+    <state x="491" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1599582387573" />
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597326613998" />
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.309.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1597764967346" />
     <state x="460" y="118" key="FileChooserDialogImpl" timestamp="1597014339027">
@@ -315,19 +328,20 @@
     </state>
     <state x="0" y="0" width="804" height="738" key="dock-window-1/0.0.1360.728@0.0.1360.728" timestamp="1597080229500" />
     <state x="747" y="5" width="983" height="1050" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1597333345231" />
-    <state x="0" y="0" width="585" height="728" key="find.popup" timestamp="1598371776085">
+    <state x="0" y="0" width="585" height="728" key="find.popup" timestamp="1599578735894">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1598371776085" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1598374524180">
+    <state x="0" y="0" width="585" height="728" key="find.popup/0.0.1366.728/0.-768.1366.728@0.0.1366.728" timestamp="1599227994373" />
+    <state x="0" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1599578735894" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1599587679416">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1598374524180" />
-    <state x="443" y="158" width="675" height="475" key="search.everywhere.popup" timestamp="1598370865507">
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599587679416" />
+    <state x="443" y="158" width="675" height="475" key="search.everywhere.popup" timestamp="1599497666242">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="441" y="158" width="672" height="475" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1597595643918" />
-    <state x="443" y="158" width="675" height="475" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598370865507" />
+    <state x="443" y="158" width="675" height="475" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1599497666242" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597333437721" />
   </component>
 </project>

@@ -24,6 +24,9 @@ class FilterController extends Controller
                     $query->where($explode[1], 'like', "%$key%");
                 })->paginate();
 
+
+                // Repair::join('products', 'repairs.product_id', 'products.codigo_unix')->where('products.descripcion', 'LIKE', '%Heladera%')->get()
+
             } else
                 $elements = $entity::where($filter, 'LIKE', "%$key%")->paginate();
         }

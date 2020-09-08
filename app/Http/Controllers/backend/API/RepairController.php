@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\backend\API;
 
 use App\Http\Controllers\Controller;
+use App\Movement;
 use App\Repair;
+use App\Status;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use function MongoDB\BSON\toJSON;
 
 class RepairController extends Controller
 {
@@ -20,5 +24,10 @@ class RepairController extends Controller
         }
 
         return response($result, 200, ['Content-Type: application/json']);
+    }
+
+    public function egresar(Repair $repair = null)
+    {
+
     }
 }

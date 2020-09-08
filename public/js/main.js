@@ -206,3 +206,8 @@ function reproducirAudio(audio) {
 
     audio.play();
 }
+
+
+function egresarProducto(e, repair) {
+
+}

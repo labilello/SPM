@@ -16,11 +16,13 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- SweetAlert -->
     <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
 </head>
 <body>
@@ -49,6 +51,7 @@
                             </li>
                         @else
                             <li class="nav-item dropdown">
+                                <input type="hidden" id="user_id" value="{{ Auth::user()->id }}">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -86,6 +89,7 @@
     <script src="{{ asset('js/plugins.js') }}"></script>
 {{--    @if(@route('vista.reparaciones.nuevo'))<script src="{{ asset('js/main.js') }}"></script>@endif--}}
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/egresos.js') }}"></script>
     <script src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
 
     </body>

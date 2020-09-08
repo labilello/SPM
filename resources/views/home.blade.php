@@ -28,8 +28,8 @@
 
                 <div class="card-body">
                     <div class="list-group">
-                        <a href="{{ route('vista.egresos.nuevo') }}" class="btn btn-toolbar text-left mb-1" role="button">Egresar producto</a>
-                        <a href="{{ route('vista.egresos.pendientes') }}" class="btn btn-toolbar text-left mb-1" role="button">Egresos pendientes</a>
+                        <a href="{{ route('vista.egresos.index') }}" class="btn btn-toolbar text-left mb-1" role="button">Remitos de envío</a>
+                        <a href="{{ route('vista.egresos.pendientes') }}" class="btn btn-toolbar text-left mb-1" role="button">Reparaciones pendientes de egreso</a>
                     </div>
                 </div>
             </div>

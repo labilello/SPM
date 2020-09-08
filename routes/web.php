@@ -51,13 +51,24 @@ Route::get('/reparaciones/reparar/{repair}', 'frontend\RepairController@reparar'
 
 //           *********************          //
 
-Route::get('egresos/nuevo', 'frontend\EgressController@nuevo')
+Route::get('egresos/envio', 'frontend\EgressController@nuevo')
     ->middleware('auth')
-    ->name('vista.egresos.nuevo');
+    ->name('vista.egresos.index');
+
+Route::get('egresos/envio/{shipment}', 'frontend\EgressController@shipment')
+    ->middleware('auth')
+    ->name('vista.egresos.envio');
+
+Route::get('egresos/pendientes/remito/{shipment}', 'frontend\EgressController@remitoSalida')
+    ->middleware('auth')
+    ->name('vista.egresos.remito');
 
 Route::get('egresos/pendientes', 'frontend\EgressController@pendientes')
     ->middleware('auth')
     ->name('vista.egresos.pendientes');
+
+
+
 
 //           *********************          //
 
@@ -78,6 +89,10 @@ Route::patch('/reparaciones/reparar/{repair}', 'backend\RepairController@reparar
 Route::delete('/reparaciones/egresar/{repair?}', 'backend\RepairController@egresar')
     ->middleware('auth')
     ->name('accion.reparaciones.egresar');
+
+Route::post('egresos/nuevo', 'backend\EgressController@nuevo')
+    ->middleware('auth')
+    ->name('accion.egresos.nuevo');
 
 Route::post('/password/cambiar', 'Auth\ChangePasswordController@changePassword')
     ->middleware('auth')
