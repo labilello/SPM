@@ -53,7 +53,6 @@
                             <th scope="col">Fecha Ingreso</th>
                             <th scope="col">Familia</th>
                             <th scope="col">Nro. Serie</th>
-                            <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody class="table-hover">
@@ -64,19 +63,6 @@
                                 <td>{{ $repair->date_in->format('d/m/Y H:i:s') }}</td>
                                 <td>{{ $repair->product->familia }}</td>
                                 <td>{{ $repair->nro_serie }}</td>
-                                <td>
-                                    <button class="dropdown-item"
-                                            onclick="event.preventDefault();
-                                            window.open('/egresos/pendientes/remito/{{ $repair->id }}');
-                                            $('#egresar-form').submit();"
-                                    >
-                                        Egresar
-                                    </button>
-                                    <form method="POST" action="{{ route('accion.reparaciones.egresar', ['repair' => $repair->id]) }}" id="egresar-form">
-                                        @csrf
-                                        @method('DELETE')
-                                    </form>
-                                </td>
                             </tr>
                         @endforeach
                     </tbody>

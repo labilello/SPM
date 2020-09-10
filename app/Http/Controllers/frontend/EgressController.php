@@ -13,7 +13,7 @@ use Barryvdh\DomPDF\Facade as PDF;
 
 class EgressController extends Controller
 {
-    public function nuevo()
+    public function index()
     {
         return view('egresos\createShipment', [
             'shipments' => Shipment::closed(false)->get(),
@@ -27,18 +27,24 @@ class EgressController extends Controller
         ]);
     }
 
+    public function remitoSalida(Shipment $shipment) {
+        $pdf = PDF::loadView('egresos.PDFremito', compact('shipment'));
+        return $pdf->stream('invoice.pdf');
+    }
+
+
+    public function remitosCerrados() {
+        return view('egresos\listShipment', [
+            'elements' => Shipment::closed(true)->orderBy('updated_at', 'desc')->paginate(),
+        ]);
+    }
+
+
     public function pendientes()
     {
         return view('egresos\pendientes', [
             'elements' => Repair::where('status_id', Status::where('descripcion', 'Reparado')->get()->first()->id)->orderBy('date_in')->paginate()
         ]);
-    }
-
-
-    public function remitoSalida() {
-
-        $pdf = PDF::loadView('egresos.PDFremito');
-        return $pdf->stream('invoice.pdf');
     }
 
 }

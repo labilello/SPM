@@ -35,6 +35,7 @@ Route::get('reportes/reparaciones', 'frontend\ReportController@reparaciones')
     ->middleware('auth')
     ->name('vista.reportes.reparaciones');
 
+
 //           *********************          //
 
 Route::get('/reparaciones/nuevo', 'frontend\RepairController@nuevo')
@@ -51,23 +52,26 @@ Route::get('/reparaciones/reparar/{repair}', 'frontend\RepairController@reparar'
 
 //           *********************          //
 
-Route::get('egresos/envio', 'frontend\EgressController@nuevo')
+Route::get('/egresos', 'frontend\EgressController@index')
     ->middleware('auth')
     ->name('vista.egresos.index');
 
-Route::get('egresos/envio/{shipment}', 'frontend\EgressController@shipment')
+Route::get('/egresos/envio/{shipment}', 'frontend\EgressController@shipment')
     ->middleware('auth')
     ->name('vista.egresos.envio');
 
-Route::get('egresos/pendientes/remito/{shipment}', 'frontend\EgressController@remitoSalida')
+Route::get('/egresos/cerrados', 'frontend\EgressController@remitosCerrados')
+    ->middleware('auth')
+    ->name('vista.egresos.cerrados');
+
+
+Route::get('/egresos/remito/{shipment}', 'frontend\EgressController@remitoSalida')
     ->middleware('auth')
     ->name('vista.egresos.remito');
 
-Route::get('egresos/pendientes', 'frontend\EgressController@pendientes')
+Route::get('/egresos/reparaciones/pendientes', 'frontend\EgressController@pendientes')
     ->middleware('auth')
     ->name('vista.egresos.pendientes');
-
-
 
 
 //           *********************          //
@@ -75,6 +79,7 @@ Route::get('egresos/pendientes', 'frontend\EgressController@pendientes')
 Route::get('filtro', 'backend\FilterController@filtroTabla')
     ->middleware('auth')
     ->name('vista.filtro');
+
 
 // =============== BACKEND ===================
 
@@ -86,16 +91,33 @@ Route::patch('/reparaciones/reparar/{repair}', 'backend\RepairController@reparar
     ->middleware('auth')
     ->name('accion.reparaciones.reparar');
 
-Route::delete('/reparaciones/egresar/{repair?}', 'backend\RepairController@egresar')
+
+
+Route::patch('egresos/envio/{shipment}', 'backend\EgressController@cerrarShipment')
     ->middleware('auth')
-    ->name('accion.reparaciones.egresar');
+    ->name('accion.egresos.cerrar');
 
 Route::post('egresos/nuevo', 'backend\EgressController@nuevo')
     ->middleware('auth')
     ->name('accion.egresos.nuevo');
 
+
+
 Route::post('/password/cambiar', 'Auth\ChangePasswordController@changePassword')
     ->middleware('auth')
     ->name('accion.password.change');
+
+
+/*** FILTROS ***/
+
+Route::post('/movimientos', 'backend\MovementController@filtro')
+    ->middleware('auth')
+    ->name('accion.filtro.movimientos');
+
+Route::post('/egresos/cerrados', 'backend\EgressController@filtro')
+    ->middleware('auth')
+    ->name('accion.filtro.remitos');
+
+
 //           *********************          //
 Auth::routes();

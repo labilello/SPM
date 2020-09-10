@@ -3,10 +3,13 @@
 namespace App;
 
 use Carbon\Carbon;
+use Fico7489\Laravel\EloquentJoin\Traits\EloquentJoin;
 use Illuminate\Database\Eloquent\Model;
 
 class Movement extends Model
 {
+    use EloquentJoin;
+    protected $aggregateMethod = null;
 
     protected $dates = ['date_in', 'date_out'];
 

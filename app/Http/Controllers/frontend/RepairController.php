@@ -5,7 +5,6 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Repair;
 use App\Status;
-use Illuminate\Http\Request;
 
 class RepairController extends Controller
 {

@@ -26,6 +26,3 @@ Route::post('productos', 'backend\ProductController@updateBaseStock')->name('api
 Route::post('egresos/envio/{shipment}/add', 'backend\API\EgressController@addToShipment')->name('api.addToShipment');
 
 
-//Route::apiResource('/products/out', 'Products\ProductsOutController');
-//Route::apiResource('/products/in', 'Products\ProductsInController');
-

@@ -21,7 +21,9 @@
                         Configuración de envío
                     </div>
                     <div class="card-body">
-                        <form class="row align-items-center" action="#">
+                        <form class="row align-items-center" action="{{ route('accion.egresos.cerrar', $shipment->id) }}" method="POST">
+                            @csrf
+                            @method('PATCH')
                             <div class="col-9">
                                 <div class="row">
                                     <div class="form-group col-8">
@@ -36,7 +38,7 @@
                             </div>
                             <div class="col-3">
                                 <button type="button" class="btn btn-danger btn-sm mb-1 btn-block" disabled @if( $shipment->is_closed ) disabled @endif>Eliminar remito</button>
-                                <button type="submit" class="btn btn-primary btn-sm btn-block" @if( $shipment->is_closed ) disabled @endif >Cerrar remito</button>
+                                <button type="submit" class="btn btn-primary btn-sm btn-block" @if( $shipment->is_closed ) disabled @endif onsubmit="cerrarRemito(event)">Cerrar remito</button>
                             </div>
                         </form>
                     </div>

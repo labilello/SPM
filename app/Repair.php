@@ -2,10 +2,13 @@
 
 namespace App;
 
+use Fico7489\Laravel\EloquentJoin\Traits\EloquentJoin;
 use Illuminate\Database\Eloquent\Model;
 
 class Repair extends Model
 {
+    use EloquentJoin;
+    protected $aggregateMethod = null;
 
     protected $dates = [
         'date_in',

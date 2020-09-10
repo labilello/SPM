@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "72e63969e54721997902e6978497164a",
+    "content-hash": "3adc46d077bf01cce1aca5f64e35562d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -543,6 +543,57 @@
                 "validator"
             ],
             "time": "2020-08-08T21:28:19+00:00"
+        },
+        {
+            "name": "fico7489/laravel-eloquent-join",
+            "version": "4.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fico7489/laravel-eloquent-join.git",
+                "reference": "361baf5ceb5c941f58eb022e9dc645d0ecbb7483"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fico7489/laravel-eloquent-join/zipball/361baf5ceb5c941f58eb022e9dc645d0ecbb7483",
+                "reference": "361baf5ceb5c941f58eb022e9dc645d0ecbb7483",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^5.5|^6.0|^7.0|^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "*",
+                "orchestra/testbench": "*",
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Fico7489\\Laravel\\EloquentJoin\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Filip Horvat",
+                    "email": "filip.horvat@am2studio.hr",
+                    "homepage": "http://am2studio.hr",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This package introduces the join magic for eloquent models and relations.",
+            "homepage": "https://github.com/fico7489/laravel-eloquent-join",
+            "keywords": [
+                "laravel eloquent join",
+                "laravel join",
+                "laravel join relation",
+                "laravel sort join",
+                "laravel where join"
+            ],
+            "time": "2020-09-09T14:33:52+00:00"
         },
         {
             "name": "fideloper/proxy",
