@@ -15,9 +15,9 @@ class CreateShipmentsTable extends Migration
     {
         Schema::create('shipments', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->string('shipto');
-            $table->string('nro_interno')->nullable()->default(null);
+            $table->string('name', 30)->unique();
+            $table->string('shipto', 100);
+            $table->string('nro_interno', 40)->nullable()->default(null);
             $table->boolean('is_closed')->default(0);
             $table->timestamps();
         });

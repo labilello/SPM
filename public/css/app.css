@@ -10968,3 +10968,37 @@ a.text-dark:focus {
   }
 }
 
+/* MIS MODIFICACIONES */
+.overflow-scroll {
+    max-height: 65vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+.overflow-scroll::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.overflow-scroll::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.overflow-scroll::-webkit-scrollbar-button:increment,.overflow-scroll::-webkit-scrollbar-button {
+    display: none;
+}
+
+.overflow-scroll::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.overflow-scroll::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.overflow-scroll::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
