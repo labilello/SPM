@@ -5,7 +5,11 @@ namespace App\Http\Controllers\frontend;
 
 
 use App\Http\Controllers\Controller;
+use App\Movement;
 use App\Repair;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
 {
@@ -15,10 +19,11 @@ class ReportController extends Controller
         ]);
     }
 
-    public function porcel() {
-        // SELECT `repairs`.`product_id`, `products`.`descripcion`, `products`.`familia`, `repairs`.`is_repair`, COUNT(*) as TOTAL FROM `repairs` INNER JOIN `products` ON `products`.`codigo_unix`=`repairs`.`product_id` WHERE `status_id` = 2 GROUP BY `repairs`.`product_id`, `repairs`.`is_repair`
-        //
-        //--
+    public function index($vistaRetorno, $elements) {
 
+        return view($vistaRetorno, [
+            'elements' => $elements
+        ]);
     }
+
 }

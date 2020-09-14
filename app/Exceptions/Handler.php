@@ -50,6 +50,39 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        return parent::render($request, $exception);
+        if (config('app.debug')) {
+            return parent::render($request, $exception);
+        }
+
+        # cuando genera algun otro error llamo al metodo ApiException
+        if ($request->expectsJson()) {
+            return $this->ApiException($request, $exception);
+        }
+
+        abort(500, 'Ha ocurrido un error en el servidor. Intente nuevamente o contacte a un administrador');
+    }
+
+    protected function ApiException($request, Exception $exception)
+    {
+        if ($exception instanceof ModelNotFoundException) {
+            $modelo =strtolower(class_basename($exception->getModel()));
+            return $this->errorResponse("No exite ninguna instancia de {$modelo} con el id expecificado", 404);
+        }
+
+        if ($exception instanceof NotFoundHttpException) {
+            return $this->errorResponse('No se encontro la url expecificada ', 404);
+        }
+
+        if ($exception instanceof MethodNotAllowedHttpException) {
+            return $this->errorResponse('El metodo expecificado en la peticion no es valido ', 405);
+        }
+        if ($exception instanceof QueryException) {
+            $codigo=$exception->errorInfo[1];
+            if ($codigo==1451) {
+                return $this->errorResponse('No se puede eliminar de forma permanente el recurso porque esta relacionado con algun otro.', 409);
+            }
+        }
+
+        return $this->errorResponse('Falla inesperada. intente luego.', 500);
     }
 }

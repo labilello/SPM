@@ -91,6 +91,11 @@
     <script src="{{ asset('js/egresos.js') }}"></script>
     <script src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
 
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
     </body>
 
 </html>

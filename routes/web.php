@@ -23,17 +23,27 @@ Route::get('/password/cambiar', 'Auth\ChangePasswordController@index')
 
 //           *********************          //
 
-Route::get('/movimientos', 'frontend\MovementController@index')
+Route::get('reportes/movimientos', 'frontend\MovementController@index')
     ->middleware('auth')
     ->name('vista.reportes.movimientos');
 
-Route::get('/productos', 'frontend\ProductController@index')
+Route::any('reportes/movimientos/agrupado', 'backend\ReportController@movementsAgruped')
+    ->middleware('auth')
+    ->name('vista.reportes.movimientos.agrupado');
+
+
+Route::get('reportes/productos', 'frontend\ProductController@index')
     ->middleware('auth')
     ->name('vista.reportes.productos');
 
 Route::get('reportes/reparaciones', 'frontend\ReportController@reparaciones')
     ->middleware('auth')
     ->name('vista.reportes.reparaciones');
+
+Route::any('reportes/reparaciones/agrupado', 'backend\ReportController@reparacionesAgruped')
+    ->middleware('auth')
+    ->name('vista.reportes.reparaciones.agrupado');
+
 
 
 //           *********************          //
@@ -121,3 +131,6 @@ Route::post('/egresos/cerrados', 'backend\EgressController@filtro')
 
 //           *********************          //
 Auth::routes();
+
+
+

@@ -1,0 +1,2 @@
+mklink /J "C:\Bitnami\wampstack-7.4.9-0\apache2\htdocs\SPM\storage" "C:\entornoPHP\SPM-master\storage\app\public"
+mklink /J "C:\Bitnami\wampstack-7.4.9-0\apache2\htdocs\SPM\images" "C:\entornoPHP\SPM-master\storage\app\public\images"

@@ -2,7 +2,7 @@ $(document).ready(function() {
     // vista.reparaciones.nuevo
     // $('.requestFocus').focus();
 
-    $('#nro_serie').on('keypress', solicitarProductosAJAX);
+    $('#nro_serie').on('keypress', solicitarProductosAJAXEgresos);
 
     // Sonidos
     var correcto = document.getElementById("correcto"); // Audio de control
@@ -11,7 +11,7 @@ $(document).ready(function() {
 });
 
 
-function solicitarProductosAJAX(e) {
+function solicitarProductosAJAXEgresos(e) {
     if (e.keyCode === 13) {
         e.preventDefault();
 
@@ -37,7 +37,7 @@ function solicitarProductosAJAX(e) {
             }
         }).then(function (response) {
                 if(response.ok) // codigo 200
-                    response.json().then(json => { verficarCoinicidencias(json) } )
+                    response.json().then(json => { verficarCoinicidenciasEgresos(json) } )
             })
             .catch(function(error) {
                 Swal.fire({
@@ -58,7 +58,7 @@ function solicitarProductosAJAX(e) {
     }
 }
 
-async function verficarCoinicidencias(body) {
+async function verficarCoinicidenciasEgresos(body) {
 
     if(body.response == "error") {
         reproducirAudio(error);
@@ -103,76 +103,4 @@ function insertarReparacion(repair) {
             `<td>${repair.nro_serie}</td>` +
             `<td class='text-center'>${repair.is_repair ? '<i class="far fa-check-circle" style="color: #00cc66; font-size: 20px"></i>' : '<i class="far fa-times-circle" style="color: red; font-size: 20px"></i>'}</td>` +
         "</tr>");
-}
-
-function mostrarSpinner(mostrar) {
-    if(mostrar == true) {
-        $('#spinner').removeClass('d-none');
-        $('#spinner').addClass('d-flex');
-    } else {
-        $('#spinner').addClass('d-none');
-        $('#spinner').removeClass('d-flex');
-    }
-}
-
-// ============== BUSQUEDA PRODUCTOS API =================
-function busquedaReparacionesAPI(e) {
-    e.preventDefault();
-
-    let key = $('#clave').val();
-    let filtro = $('#buscarPor').val();
-    let status = $('#status').val();
-    let entidad = $('#entidad').val();
-
-    fetch('/api/' + entidad + '/' + status + '/' + filtro + '/' + key)
-        .then(function (response) {
-            if(response.ok) // codigo 200
-                response.json().then(json => { cargarTablaBusquedaAPI(json) } )
-            else { // codigo 404
-                Swal.fire({
-                    title: 'Sin coincidencias!',
-                    text: 'No se encontraron coincidencias para la clave ingresada',
-                    timer: 2000,
-                    timerProgressBar: true,
-                    showConfirmButton: false
-                });
-
-                $('#clave').val("");
-            }
-        })
-        .catch(function(error) {
-            Swal.fire({
-                title: 'Error!',
-                text: 'Hubo un problema con la petición. Verifique la conexion y reintente',
-                timer: 5000,
-                timerProgressBar: true,
-                showConfirmButton: false
-            });
-
-            $('#clave').val("");
-        })
-}
-
-function cargarTablaBusquedaAPI(json) {
-
-    $('#mytable tbody').empty();
-    $('.pagination').empty();
-    $('#totalTabla').text(json.length);
-
-
-}
-
-
-function reproducirAudio(audio) {
-    if (!audio.paused) {
-        audio.pause();
-        audio.currentTime = 0;
-    }
-
-    audio.play();
-}
-
-
-function egresarProducto(e, repair) {
-
 }

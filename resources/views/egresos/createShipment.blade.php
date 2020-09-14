@@ -8,7 +8,11 @@
 {{--    </audio>--}}
 
     <div class="container-sm">
-        <h2 class="text-center text-uppercase text-primary font-weight-bold">Envío de productos ya inspeccionados</h2>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="text-center text-uppercase text-primary font-weight-bold">Envío de productos ya inspeccionados</h2>
+            <a class="btn btn-danger font-weight-bold my-auto" href="{{ route('vista.egresos.cerrados') }}" role="button">Remitos cerrados</a>
+        </div>
+
         <hr>
         @if(session('status'))
             <div class="alert alert-{{ session('type_status') }} my-2" role="alert">

@@ -29,7 +29,7 @@ class EgressController extends Controller
 
     public function remitoSalida(Shipment $shipment) {
         $pdf = PDF::loadView('egresos.PDFremito', compact('shipment'));
-        return $pdf->stream('invoice.pdf');
+        return $pdf->stream('Remito.pdf');
     }
 
 

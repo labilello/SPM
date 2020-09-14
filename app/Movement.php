@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Movement extends Model
 {
     use EloquentJoin;
-    protected $aggregateMethod = null;
+    protected $aggregateMethod = 'COUNT';
 
     protected $dates = ['date_in', 'date_out'];
 

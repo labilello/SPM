@@ -95,7 +95,7 @@
             <tbody>
                 <tr style="vertical-align: text-top;">
                     <td style="width: 35%">
-                        <img src="src/img/logo.png" alt="" style="margin-bottom: 10px;">
+                        <img src="{{ asset('images/logo.png') }}" alt="" style="margin-bottom: 10px;">
                         <p>Compuservice</p>
                         <p>Av. Rivadavia 6732</p>
                         <p>Capital Federal - C.P. 1406</p>

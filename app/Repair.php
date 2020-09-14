@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Repair extends Model
 {
-    use EloquentJoin;
-    protected $aggregateMethod = 'COUNT';
+//    use EloquentJoin;
+//    protected $aggregateMethod = 'COUNT';
 
     protected $dates = [
         'date_in',

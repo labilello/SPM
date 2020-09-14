@@ -66,15 +66,13 @@
                                 <td class="text-center">@if($repair->date_out == null) - @else {{ $repair->date_out->format('d/m/Y H:i:s') }} @endif</td>
                                 <td>{{ $repair->product->familia }}</td>
                                 <td>{{ $repair->nro_serie }}</td>
-                                <td class="text-center">
-                                    @if($repair->is_repair === null)
-                                        -
-                                    @elseif($repair->is_repair === true)
-                                        <i class="far fa-check-circle" style="color: #00cc66; font-size: 20px"></i>
-                                    @else
-                                        <i class="far fa-times-circle" style="color: red; font-size: 20px"></i>
-                                    @endif
-                                </td>
+                                @if($repair->is_repair === null)
+                                    <td class="text-info font-weight-bold">Desconocido</td>
+                                @elseif($repair->is_repair === true)
+                                    <td class="text-success font-weight-bold">Reparado</td>
+                                @else
+                                    <td class="text-danger font-weight-bold">Irreparable</td>
+                                @endif
                                 <td>{{ $repair->status->descripcion }}</td>
                                 <td class="text-center">
                                     @if($repair->note != '')
