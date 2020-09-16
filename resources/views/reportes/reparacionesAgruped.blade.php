@@ -15,7 +15,7 @@
                 <form method="GET" action="{{ route('vista.reportes.reparaciones.agrupado') }}" id="collapseFilter" class="collapse card-body" aria-labelledby="headingFilter" data-parent="#accordionFilter">
                     <div class="row">
                         <div class="form-group col">
-                            <label for="type_movement">Tipo de movimiento:</label>
+                            <label for="type_movement">Estado actual:</label>
                             <select class="custom-select custom-select" name="type_movement" id="type_movement">
                                 <option value="" selected>-- Sin filtrar --</option>
                                 <option value="1" >Ingresado</option>
