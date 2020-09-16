@@ -41,7 +41,7 @@
                         </div>
                         <div class="form-group col">
                             <label for="fecha_hasta">Fecha hasta:</label>
-                            <input type="date" class="form-control" id="fecha_hasta" name="fechas[to]" value="" min="2020-08-01" max="{{ \Carbon\Carbon::now('America/Argentina/Buenos_Aires')->format('Y-m-d') }}">
+                            <input type="date" class="form-control" id="fecha_hasta" name="fechas[to]" value="" min="2020-08-01" max="{{ \Carbon\Carbon::now('America/Argentina/Buenos_Aires')->addDay()->format('Y-m-d') }}">
                         </div>
                     </div>
                     <div class="row">
