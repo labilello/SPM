@@ -37,7 +37,7 @@ class ReportController extends Controller
             ->groupBy('repairs.product_id')
             ->orderBy('products.familia', 'asc')
             ->orderBy('products.codigo_unix', 'asc')
-            ->paginate();
+            ->get();
 
         return (new \App\Http\Controllers\frontend\ReportController())->index('reportes.movementsAgruped', $elements);
     }
@@ -63,7 +63,7 @@ class ReportController extends Controller
             ->groupBy('repairs.product_id', 'repairs.is_repair')
             ->orderBy('products.familia', 'asc')
             ->orderBy('repairs.product_id', 'asc')
-            ->paginate();
+            ->get();
 
         return (new \App\Http\Controllers\frontend\ReportController())->index('reportes.reparacionesAgruped', $elements);
 
