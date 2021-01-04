@@ -10,7 +10,7 @@
 {{--    </div>--}}
 
     <div class="row justify-content-center">
-        <div class="col-md-5">
+        <div class="col-12 col-md-6">
             <div class="card mb-4">
                 <div class="card-header bg-success text-white">{{ __('Linea de reparacion') }}</div>
 
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-12 col-md-6">
             <div class="card mb-4">
                 <div class="card-header bg-primary text-white">{{ __('Desposito') }}</div>
 
@@ -37,7 +37,7 @@
     </div>
 
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-12 col-md-6">
             <div class="card">
                 <div class="card-header bg-danger text-white">{{ __('Reportes') }}</div>
 
@@ -65,6 +65,19 @@
                             <i class="far fa-question-circle" data-toggle="tooltip" data-placement="left" title="Listado de productos registrados" style="color: #1f6fb2; font-size: 20px"></i>
                         </div>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-dark text-white">{{ __('Arma Tu PC') }}</div>
+
+                <div class="card-body">
+                    <div class="list-group">
+                        <a href="{{ route('vista.makepc.lista') }}" class="btn btn-toolbar text-left mb-1" role="button">Lista de PCs armadas</a>
+                        <a href="{{ route('vista.makepc.nuevo') }}" class="btn btn-toolbar text-left mb-1" role="button">Nuevo armado de PC</a>
                     </div>
                 </div>
             </div>

@@ -40,6 +40,9 @@ class User extends Authenticatable
 
     public function movements() {
         return $this->hasMany('App\Movement', 'user_id');
-        Carbon::now();
+    }
+
+    public function makepcs() {
+        return $this->hasMany('App\Makepc', 'user_id');
     }
 }

@@ -23,6 +23,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @livewireStyles
 
 
 </head>
@@ -96,7 +97,8 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
-    </body>
 
+    @livewireScripts
+    </body>
 </html>
 

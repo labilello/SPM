@@ -47,6 +47,33 @@ Route::any('reportes/reparaciones/agrupado', 'backend\ReportController@reparacio
 
 
 //           *********************          //
+Route::get('/armatupc/nuevo', 'frontend\MakePccontroller@nuevo')
+    ->middleware('auth')
+    ->name('vista.makepc.nuevo');
+
+Route::post('/armatupc/nuevo', 'backend\MakePccontroller@action')
+    ->middleware('auth')
+    ->name('accion.makepc.nuevo');
+
+Route::get('/armatupc/editar/{makepc}', 'frontend\MakePccontroller@editar')
+    ->middleware('auth')
+    ->name('vista.makepc.editar');
+
+Route::put('/armatupc/editar/{makepc}', 'backend\MakePccontroller@action')
+    ->middleware('auth')
+    ->name('accion.makepc.editar');
+
+Route::get('/armatupc/lista', '\App\Http\Livewire\MakePc\All')
+    ->middleware('auth')
+    ->name('vista.makepc.lista');
+
+Route::get('/armatupc/imprimir/{makepc}', 'backend\MakePccontroller@imprimirEtiqueta')
+    ->middleware('auth')
+    ->name('accion.makepc.imprimir');
+
+
+
+
 
 Route::get('/reparaciones/nuevo', 'frontend\RepairController@nuevo')
     ->middleware('auth')

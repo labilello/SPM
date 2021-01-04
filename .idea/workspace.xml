@@ -37,7 +37,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -75,9 +77,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
-      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
@@ -145,13 +145,11 @@
       <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
-      <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
@@ -166,6 +164,15 @@
       <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
       <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
       <path value="$PROJECT_DIR$/vendor/fico7489/laravel-eloquent-join" />
+      <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
     </include_path>
   </component>
   <component name="ProjectId" id="1fsjmR1nmC5VLE6Rh9XKlYFbPqS" />
@@ -180,24 +187,24 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.data.extractors.current.export.id" value="SQL Updates" />
     <property name="database.data.extractors.current.id" value="SQL Updates" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/makepc" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\entornoPHP\SPM-master\storage\app\public\images" />
-      <recent name="C:\entornoPHP\SPM-master\resources\views\reportes" />
-      <recent name="C:\entornoPHP\SPM-master\resources\views\egresos" />
-      <recent name="C:\entornoPHP\SPM-master\public\src\img" />
-      <recent name="C:\entornoPHP\SPM-master\resources\views\auth" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\entornoPHP\SPM-master\app\Http\Controllers\frontend" />
       <recent name="C:\entornoPHP\SPM-master\storage\app\public" />
       <recent name="C:\entornoPHP\SPM-master\storage\app" />
       <recent name="C:\entornoPHP\SPM-master\public\src\img" />
       <recent name="C:\entornoPHP\SPM-master\public\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\entornoPHP\SPM-master\resources\views\makepc" />
+      <recent name="C:\entornoPHP\SPM-master\app\Http\Controllers\backend" />
+      <recent name="C:\entornoPHP\SPM-master\storage\app\public\images" />
+      <recent name="C:\entornoPHP\SPM-master\resources\views\reportes" />
       <recent name="C:\entornoPHP\SPM-master\resources\views\egresos" />
     </key>
   </component>
@@ -250,7 +257,20 @@
       <workItem from="1599827454421" duration="8196000" />
       <workItem from="1599855686728" duration="77000" />
       <workItem from="1600090338114" duration="12333000" />
-      <workItem from="1600260379966" duration="4795000" />
+      <workItem from="1600260379966" duration="4936000" />
+      <workItem from="1607523525017" duration="2671000" />
+      <workItem from="1607608452114" duration="738000" />
+      <workItem from="1607611671964" duration="7618000" />
+      <workItem from="1608299583506" duration="2157000" />
+      <workItem from="1608311585277" duration="5956000" />
+      <workItem from="1608553801456" duration="6861000" />
+      <workItem from="1608647993535" duration="14490000" />
+      <workItem from="1608728229944" duration="9365000" />
+      <workItem from="1608748329713" duration="28000" />
+      <workItem from="1609167076136" duration="9061000" />
+      <workItem from="1609268243405" duration="7482000" />
+      <workItem from="1609338502641" duration="13979000" />
+      <workItem from="1609778114270" duration="6838000" />
     </task>
     <servers />
   </component>
@@ -282,76 +302,34 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="384" y="31" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597765204029">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="272" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1360.728@0.0.1360.728" timestamp="1597014352092" />
-    <state x="384" y="31" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.309.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1597765204029" />
-    <state x="420" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600102546953">
+    <state x="491" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609352040801">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="418" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1360.728@0.0.1360.728" timestamp="1597418041557" />
-    <state x="420" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1600102546953" />
-    <state x="590" y="236" key="#com.intellij.fileTypes.FileTypeChooser/1920.309.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1597764387951" />
-    <state x="98" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597597347405">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="98" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1360.728@0.0.1360.728" timestamp="1597597347405" />
-    <state x="544" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597326353500" />
-    <state x="491" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600092655799">
+    <state x="-875" y="195" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/-1366.3.1366.728@-1366.3.1366.728" timestamp="1607523971085" />
+    <state x="491" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1609352040801" />
+    <state x="459" y="276" key="ComposerInitDialogKey" timestamp="1609778836723">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="489" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728@0.0.1360.728" timestamp="1597418250452" />
-    <state x="491" y="-576" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/0.-768.1366.728@0.-768.1366.728" timestamp="1598618968556" />
-    <state x="491" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1600092655799" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597326613998" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.309.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1597764967346" />
-    <state x="460" y="118" key="FileChooserDialogImpl" timestamp="1597014339027">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="460" y="118" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1597014339027" />
-    <state x="504" y="283" key="Github.CreateGistDialog" timestamp="1597588944591">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="504" y="283" key="Github.CreateGistDialog/0.0.1360.728@0.0.1360.728" timestamp="1597588944591" />
-    <state x="260" y="98" key="IDE.errors.dialog" timestamp="1597081602649">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="260" y="98" key="IDE.errors.dialog/0.0.1360.728@0.0.1360.728" timestamp="1597081602649" />
-    <state x="446" y="86" key="NewPhpClassDialog" timestamp="1598456994286">
+    <state x="459" y="276" key="ComposerInitDialogKey/0.0.1366.728@0.0.1366.728" timestamp="1609778836723" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1607608503443">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="444" y="86" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1597589876556" />
-    <state x="446" y="86" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1598456994286" />
-    <state x="181" y="8" key="SettingsEditor" timestamp="1597589051077">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="181" y="8" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1597589051077" />
-    <state x="288" y="0" width="844" height="728" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1597930642524">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607608503443" />
+    <state x="288" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1609783442104">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="288" y="0" width="844" height="728" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1597930642524" />
-    <state x="747" y="5" width="983" height="1050" key="dock-window-1" timestamp="1597333345231">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="0" y="0" width="804" height="738" key="dock-window-1/0.0.1360.728@0.0.1360.728" timestamp="1597080229500" />
-    <state x="747" y="5" width="983" height="1050" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1597333345231" />
-    <state x="0" y="0" width="585" height="728" key="find.popup" timestamp="1600103933957">
+    <state x="288" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1609783442104" />
+    <state x="636" y="61" width="1339" height="716" key="dock-window-1" timestamp="1608651119817">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="-768" width="585" height="728" key="find.popup/0.0.1366.728/0.-768.1366.728@0.-768.1366.728" timestamp="1599658047518" />
-    <state x="0" y="0" width="585" height="728" key="find.popup/0.0.1366.728/0.-768.1366.728@0.0.1366.728" timestamp="1599227994373" />
-    <state x="0" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1600103933957" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1599756135519">
+    <state x="636" y="61" width="1339" height="716" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1608651119817" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1608317388284">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599756135519" />
-    <state x="443" y="158" width="675" height="475" key="search.everywhere.popup" timestamp="1600096323377">
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1608317388284" />
+    <state x="443" y="158" width="672" height="160" key="search.everywhere.popup" timestamp="1609344667138">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="441" y="158" width="672" height="475" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1597595643918" />
-    <state x="443" y="-610" width="675" height="475" key="search.everywhere.popup/0.0.1366.728/0.-768.1366.728@0.-768.1366.728" timestamp="1599655979242" />
-    <state x="443" y="158" width="675" height="475" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1600096323377" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597333437721" />
+    <state x="443" y="158" width="672" height="160" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1609344667138" />
   </component>
 </project>
