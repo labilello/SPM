@@ -42,7 +42,7 @@ class MakePccontroller extends Controller
             {
                 $zpl = $this->crearEtiqueta($makepc->id, $makepc->NV, $parts);
                 //abrimos el soket de red a la ip de la impresora y el puerto por defecto de zebra es el 9100
-                $printerIp ="192.168.1.105";
+                $printerIp ="192.168.1.50";
                 $fp = pfsockopen($printerIp,9100);
                 fputs($fp, $zpl);
                 fclose($fp);
