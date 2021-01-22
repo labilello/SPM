@@ -40,7 +40,7 @@
                 </tbody>
             </table>
             <div class="row">
-                <div class="col">{{ $makepcs->links('vendor.pagination.bootstrap-4') }}</div>
+                <div class="col">{{ $makepcs->links('vendor.pagination.bootstrap-4-livewire') }}</div>
             </div>
         </div>
     </div>

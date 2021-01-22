@@ -73,7 +73,7 @@
                 </table>
                 @isset($elements->onEachSide)
                     <div class="row">
-                        <div class="col">{{ $elements->links() }}</div>
+                        <div class="col">{{ $elements->links('vendor.pagination.bootstrap-4') }}</div>
                     </div>
                 @endisset
             </div>

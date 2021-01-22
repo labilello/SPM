@@ -77,7 +77,7 @@
                 </table>
                 @isset($elements->onEachSide)
                     <div class="row">
-                        <div class="col">{{ $elements->appends(request()->input())->links() }}</div>
+                        <div class="col">{{ $elements->appends(request()->input())->links('vendor.pagination.bootstrap-4') }}</div>
                     </div>
                 @endisset
             </div>
