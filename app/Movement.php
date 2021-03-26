@@ -5,10 +5,12 @@ namespace App;
 use Carbon\Carbon;
 use Fico7489\Laravel\EloquentJoin\Traits\EloquentJoin;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Movement extends Model
 {
-    use EloquentJoin;
+    use EloquentJoin, SoftDeletes;
+
     protected $aggregateMethod = 'COUNT';
 
     protected $dates = ['date_in', 'date_out'];

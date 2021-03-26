@@ -33,10 +33,10 @@ class ReportController extends Controller
             ->where('products.familia', 'like', $familia)
             ->select('movements.status_id', 'repairs.product_id', 'products.descripcion', 'products.familia', DB::raw('COUNT(*) as total'))
             ->join('repairs', 'repairs.id', 'movements.repair_id')
-            ->join('products', 'products.codigo_unix', 'repairs.product_id')
+            ->join('products', 'products.id', 'repairs.product_id')
             ->groupBy('repairs.product_id')
             ->orderBy('products.familia', 'asc')
-            ->orderBy('products.codigo_unix', 'asc')
+            ->orderBy('products.id', 'asc')
             ->get();
 
         return (new \App\Http\Controllers\frontend\ReportController())->index('reportes.movementsAgruped', $elements);
@@ -55,7 +55,7 @@ class ReportController extends Controller
         $familia = isset($familia) ? "%$familia%" : '%%';
 
         $elements = Repair::select('repairs.status_id', 'repairs.product_id', 'products.descripcion', 'products.familia', 'repairs.is_repair', DB::raw('COUNT(*) as total'))
-            ->join('products', 'products.codigo_unix', '=', 'repairs.product_id')
+            ->join('products', 'products.id', '=', 'repairs.product_id')
             ->where('status_id', '<>', 3)
             ->where('status_id', 'like', $tipoMovimiento)
             ->where('products.descripcion', 'like', $producto)

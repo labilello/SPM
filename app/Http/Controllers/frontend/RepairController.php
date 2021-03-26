@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\frontend;
 
+use App\DataTables\PendingRepairsDataTable;
 use App\Http\Controllers\Controller;
 use App\Repair;
 use App\Status;
@@ -15,9 +16,7 @@ class RepairController extends Controller
 
     public function pendientes()
     {
-        return view('reparaciones\pendientes', [
-            'elements' => Repair::where('status_id', Status::where('descripcion', 'Ingresado')->get()->first()->id)->orderBy('date_in')->paginate()
-        ]);
+        return view('reparaciones/pendientes');
     }
 
     public function reparar(Repair $repair)

@@ -51,6 +51,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="87317ced-cade-4679-8037-cd9985675e11" />
   </component>
@@ -173,6 +181,19 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
       <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/mediconesystems/livewire-datatables" />
+      <path value="$PROJECT_DIR$/vendor/uxweb/sweet-alert" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
     </include_path>
   </component>
   <component name="ProjectId" id="1fsjmR1nmC5VLE6Rh9XKlYFbPqS" />
@@ -189,7 +210,8 @@
     <property name="database.data.extractors.current.id" value="SQL Updates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/vendor/pagination" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -201,11 +223,11 @@
       <recent name="C:\entornoPHP\SPM-master\resources\views\reportes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\entornoPHP\SPM-master\app\Http\Controllers\frontend" />
-      <recent name="C:\entornoPHP\SPM-master\storage\app\public" />
-      <recent name="C:\entornoPHP\SPM-master\storage\app" />
-      <recent name="C:\entornoPHP\SPM-master\public\src\img" />
-      <recent name="C:\entornoPHP\SPM-master\public\js" />
+      <recent name="C:\entorno-prog\SPM-master\app\Http\Livewire\Tables" />
+      <recent name="C:\entorno-prog\SPM-master\storage\app\public\images" />
+      <recent name="C:\entorno-prog\SPM-master\storage\app" />
+      <recent name="C:\entorno-prog\SPM-master\app\Http\Traits" />
+      <recent name="C:\entorno-prog\SPM-master\app\Http" />
     </key>
   </component>
   <component name="RunManager">
@@ -275,6 +297,14 @@
       <workItem from="1609946398366" duration="596000" />
       <workItem from="1609967177545" duration="545000" />
       <workItem from="1611324885062" duration="1757000" />
+      <workItem from="1616011127650" duration="4928000" />
+      <workItem from="1616080470647" duration="25232000" />
+      <workItem from="1616161718225" duration="7380000" />
+      <workItem from="1616175416399" duration="7299000" />
+      <workItem from="1616425357710" duration="21658000" />
+      <workItem from="1616508614197" duration="22830000" />
+      <workItem from="1616685730009" duration="18769000" />
+      <workItem from="1616762827942" duration="781000" />
     </task>
     <servers />
   </component>
@@ -304,40 +334,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="491" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609352040801">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="-875" y="195" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/-1366.3.1366.728@-1366.3.1366.728" timestamp="1607523971085" />
-    <state x="491" y="192" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1609352040801" />
-    <state x="459" y="276" key="ComposerInitDialogKey" timestamp="1609778836723">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="459" y="276" key="ComposerInitDialogKey/0.0.1366.728@0.0.1366.728" timestamp="1609778836723" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1609967741697">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1609967741697" />
-    <state x="288" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1609783442104">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="288" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1609783442104" />
-    <state x="636" y="61" width="1339" height="716" key="dock-window-1" timestamp="1608651119817">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="636" y="61" width="1339" height="716" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1608651119817" />
-    <state x="390" y="97" width="585" height="592" key="find.popup" timestamp="1611326871282">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="390" y="97" width="585" height="592" key="find.popup/0.0.1366.728/-1366.3.1366.728@0.0.1366.728" timestamp="1611326871282" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1608317388284">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1608317388284" />
-    <state x="443" y="158" width="672" height="160" key="search.everywhere.popup" timestamp="1609344667138">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="443" y="158" width="672" height="160" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1609344667138" />
   </component>
 </project>

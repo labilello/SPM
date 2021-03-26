@@ -40,7 +40,7 @@ class RepairController extends Controller
         $ingreso->status_id = Status::where('descripcion', 'Ingresado')->get()->first()->id;
         $ingreso->nro_serie = $datosRequest['nro_serie'];
 //        $ingreso->product_id = Product::find($datosRequest['codigo_unix'])->codigo_unix;
-        $ingreso->product_id = $datosRequest['codigo_unix'];
+        $ingreso->product_id = $datosRequest['id'];
 
         $ingreso->save();
 

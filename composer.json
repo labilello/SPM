@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2.5",
         "barryvdh/laravel-dompdf": "^0.8.6",
+        "doctrine/dbal": "^3.0",
         "fico7489/laravel-eloquent-join": "^4.1",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
@@ -17,7 +18,9 @@
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
-        "livewire/livewire": "^2.3"
+        "livewire/livewire": "^2.3",
+        "mediconesystems/livewire-datatables": "^0.4.3",
+        "uxweb/sweet-alert": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",

@@ -9,8 +9,9 @@ window._ = require('lodash');
 try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
-
     require('bootstrap');
+    window.Swal = require("sweetalert2");
+    require('alpinejs');
 } catch (e) {}
 
 /**

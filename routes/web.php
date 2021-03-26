@@ -93,7 +93,7 @@ Route::get('/egresos', 'frontend\EgressController@index')
     ->middleware('auth')
     ->name('vista.egresos.index');
 
-Route::get('/egresos/envio/{shipment}', 'frontend\EgressController@shipment')
+Route::get('/egresos/envio/{shipment}', '\App\Http\Livewire\Egresos\Shipment')
     ->middleware('auth')
     ->name('vista.egresos.envio');
 

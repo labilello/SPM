@@ -131,7 +131,7 @@ async function verficarCoinicidencias(body) {
 function insertarProducto(producto) {
     $('#familia').val(producto.familia);
     $('#descripcion').val(producto.descripcion);
-    $('#codigoUnix').val(producto.codigo_unix);
+    $('#id').val(producto.id);
     $('#codigoUnico').val(producto.codigo_unico);
     $('#marca').val(producto.marca);
 

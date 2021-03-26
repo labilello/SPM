@@ -9,9 +9,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -82,23 +79,44 @@
         </main>
     </div>
 
-
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script>
-        window.jQuery || document.write('<script src="{{ asset('js/vendor/jquery-3.4.1.min.js') }}"><\/script>')
-    </script>
+    @livewireScripts
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/egresos.js') }}"></script>
-    <script src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
 
+    @include('sweet::alert')
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
+
+        window.addEventListener('swal:modal', event => {
+            Swal.fire( event.detail );
+        });
+
+        window.addEventListener('swal:confirm', event => {
+            swal({
+                title: event.detail.message,
+                text: event.detail.text,
+                icon: event.detail.type,
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    window.livewire.emit('remove');
+                }
+            });
+        });
+
+
+        // Swal.bindClickHandler('data-swal-template-asd');
+        Swal.mixin({
+            toast: false,
+        }).bindClickHandler('data-swal-template-asd')
     </script>
 
-    @livewireScripts
     </body>
+
 </html>
 

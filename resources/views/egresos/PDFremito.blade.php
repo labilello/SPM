@@ -9,7 +9,7 @@
         }
 
         body {
-            margin-top: 145px;
+            margin-top: 150px;
             font: -webkit-small-control;
         }
 
@@ -95,7 +95,7 @@
             <tbody>
                 <tr style="vertical-align: text-top;">
                     <td style="width: 35%">
-                        <img src="{{ asset('images/logo.png') }}" alt="" style="margin-bottom: 10px;">
+                        <img src="{{ public_path('images/logo.png') }}" alt="" style="margin-bottom: 10px;">
                         <p>CM TechGo - Camacua</p>
                         <p>Camacua 46</p>
                         <p>CABA - C1406DOB</p>
@@ -182,16 +182,17 @@
     <main class="centrar-texto">
         <table class="tabla-productos">
             <tbody>
-                {{ $repairs = $shipment->repairs()->orderBy('is_repair')->get() }}
-                @for($i=0; $i < count($repairs); $i++ )
+{{--                @php( $repairs = $this->shipment->repairs()->orderBy('is_repair')->get() )--}}
+{{--                @for($i=0; $i < count($repairs); $i++ )--}}
+                @foreach($shipment->repairs as $repair)
                     <tr>
-                        <th style="width: 5%;">{{ $i+1 }}</th>
-                        <td class="centrar-texto" style="width: 15%;">{{ $repairs[$i]->product->codigo_unix }}</td>
-                        <td style="width: 35%;">{{ $repairs[$i]->product->descripcion }}</td>
-                        <td style="width: 30%;">{{ $repairs[$i]->nro_serie }}</td>
-                        <td class="centrar-texto" style="width: 15%;">@if( $repairs[$i]->is_repair ) REPARADO @else IRREPARABLE @endif</td>
+                        <th style="width: 5%;">{{ $repair->id }}</th>
+                        <td class="centrar-texto" style="width: 15%;">{{ $repair->product->id }}</td>
+                        <td style="width: 35%;">{{ $repair->product->descripcion }}</td>
+                        <td style="width: 30%;">{{ $repair->nro_serie }}</td>
+                        <td class="centrar-texto" style="width: 15%;">@if( $repair->is_repair ) REPARADO @else IRREPARABLE @endif</td>
                     </tr>
-                @endfor
+                @endforeach
 {{--                <tr>--}}
 {{--                    <th style="width: 5%;">1</th>--}}
 {{--                    <td class="centrar-texto" style="width: 15%;">asd</td>--}}

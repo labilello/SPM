@@ -4,11 +4,13 @@ namespace App;
 
 use Fico7489\Laravel\EloquentJoin\Traits\EloquentJoin;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Repair extends Model
 {
 //    use EloquentJoin;
 //    protected $aggregateMethod = 'COUNT';
+    use SoftDeletes;
 
     protected $dates = [
         'date_in',

@@ -71,7 +71,7 @@
                         <div class="row">
                             <div class="form-group col-sm">
                                 <label for="codigoUnix">Codigo Unix</label>
-                                <input type="text" class="form-control" name="codigo_unix" id="codigoUnix" placeholder="-" readonly>
+                                <input type="text" class="form-control" name="id" id="id" placeholder="-" readonly>
                             </div>
 
                             <div class="form-group col-sm">
