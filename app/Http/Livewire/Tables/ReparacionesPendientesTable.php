@@ -173,9 +173,11 @@ class ReparacionesPendientesTable extends LivewireDatatable
 //            : Carbon::parse($date)->diffForHumans(['parts' => 2]);
 //    }
     public function delete( $id ) {
-        dd($this->columns);
-//        $repair = Repair::findOrFail( $id );
-//        dd('works');
-//        $repair->delete();
+//        dd($this->columns);
+        $repair = Repair::findOrFail( $id );
+        foreach ($repair->movements as $movement) {
+            $movement->delete();
+        }
+        $repair->delete();
     }
 }

@@ -136,31 +136,37 @@
                                 @endif
                             </td>
                             <td class="text-center py-1 align-middle">
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#staticBackdrop">
-                                    <i class="fas fa-trash"></i>
-                                </button>
+                                @if($shipment->is_closed)
+                                    <button type="button" class="btn btn-sm btn-danger disabled">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                @else
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#staticBackdrop">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="Deleted Modal" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="staticBackdropLabel">Deshaciendo envío de {{ $shipment->repairs[$i]->product->descripcion }}</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                ¿Esta seguro que desea devolver el producto a desposito? Esta accion no podrá deshacerse. <br> Recuerde alojar el producto en la zona de pendientes de envío.
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                <button type="button" wire:click="cancelShipProduct( {{ $shipment->repairs[ $i ]->id }} )" class="btn btn-danger">Eliminar</button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="Deleted Modal" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Deshaciendo envío de {{ $shipment->repairs[$i]->product->descripcion }}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    ¿Esta seguro que desea devolver el producto a desposito? Esta accion no podrá deshacerse. <br> Recuerde alojar el producto en la zona de pendientes de envío.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" wire:click="cancelShipProduct( {{ $shipment->repairs[ $i ]->id }} )" class="btn btn-danger">Eliminar</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endif
                             </td>
                         </tr>
                     @endfor

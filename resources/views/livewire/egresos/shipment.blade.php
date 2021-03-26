@@ -68,7 +68,7 @@
             <div class="input-group">
                 @if( $shipment->is_closed )
 {{--                    <button class="col btn btn-danger mr-2" wire:click="downloadPDF" >Imprimir remito</button>--}}
-                    <a class="col btn btn-danger mr-2" target="_blank" href="{{ route('vista.egresos.remito', $shipment->id) }}" >Imprimir remito</a>
+                    <a class="col btn btn-danger mr-2" target="_blank" href="{{ route('vista.egresos.remito', $shipment->id) }}" >Descargar remito</a>
                     <button class="col btn btn-success ml-2" wire:click="downloadExcel">Exportar a Excel</button>
                 @else
                     <div class="input-group-prepend">
@@ -86,7 +86,7 @@
             <div wire:loading.flex class="justify-content-center align-items-center mb-3" id="spinner">
                 <div class="spinner-border text-danger" role="status">
                 </div>
-                <span class="text-muted ml-2">Buscando reparación...</span>
+                <span class="text-muted ml-2">Procesando información...</span>
             </div>
         </div>
     </div>
@@ -116,10 +116,16 @@
                         @endif
                     </td>
                     <td class="text-center py-1 align-middle">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-sm btn-danger" wire:click="cancelShipProduct({{$repair->id}})">
-                            <i class="fas fa-trash"></i>
-                        </button>
+                        @if($shipment->is_closed)
+                            <button type="button" class="btn btn-sm btn-danger disabled">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        @else
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-sm btn-danger" wire:click="cancelShipProduct({{$repair->id}})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        @endif
 
 {{--                        <!-- Modal -->--}}
 {{--                        <div class="modal fade" id="deleteProduct{{$n}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="Deleted Modal" aria-hidden="true">--}}

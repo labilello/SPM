@@ -9,7 +9,7 @@
         }
 
         body {
-            margin-top: 150px;
+            margin-top: 160px;
             font: -webkit-small-control;
         }
 

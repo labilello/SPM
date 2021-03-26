@@ -72,7 +72,7 @@
                                 <td>{{ $shipment->shipto }}</td>
                                 <td>{{ $shipment->nro_interno }}</td>
                                 <td>{{ $shipment->updated_at->format('d/m/Y H:i:s') }}</td>
-                                <td><a href="{{ route('vista.egresos.remito', $shipment->id) }}" target="_blank" class="btn btn-danger btn-sm btn-block">Ver remito</a></td>
+                                <td><a href="{{ route('vista.egresos.envio', $shipment->id) }}" target="_blank" class="btn btn-danger btn-sm btn-block">Ver remito</a></td>
                             </tr>
                         @endforeach
                     </tbody>
