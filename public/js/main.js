@@ -254,5 +254,97 @@ function copyToClipboard(text, el) {
 }
 
 $(document).ready(function() {
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    window.addEventListener('swal:modal', event => { Swal.fire( event.detail ); });
+    window.addEventListener('sound:play', event => { soundPlay( event.detail ); });
 
 });
+
+
+
+function sinCoincidencias( show ) {
+    Swal.fire({
+        title: 'Sin coincidencias!',
+        text: 'No se encontraron coincidencias para el codigo de barras ingresado',
+        icon: 'error',
+        showCloseButton: true,
+        toast: true,
+        position: 'top-right',
+        timer: 3000,
+        timerProgressBar: true,
+        showConfirmButton: false
+    });
+    soundPlay('error');
+}
+
+function mostrarProducto( producto, refs) {
+    refs.familia.value = producto.familia;
+    refs.descripcion.value = producto.descripcion;
+    refs.codunix.value = producto.id;
+    refs.codunico.value = producto.codigo_unico;
+    refs.marca.value = producto.marca;
+
+    // refs.ean.value = producto.codigo_barras;
+    refs.nroserie.focus();
+    refs.nroserie.disabled = false;
+    soundPlay('success');
+    refs.show.style.display = 'block';
+}
+
+async function preguntarProducto( productos, refs ) {
+    // Generamos el array de opciones formateado para el modal
+    var opciones = new Array();
+    productos.forEach(element => {
+        opciones.push(`${element.descripcion} - ${element.codigo_unico}`);
+    });
+
+    // Mostramos el modal y esperamos la respuesta
+    Swal.fire({
+        title: 'Multiples coincidencias!',
+        inputPlaceholder: 'Seleccione un elemento',
+        input: 'select',
+        inputOptions: opciones,
+        allowOutsideClick: false,
+        confirmButtonText: 'Seleccionar',
+        showCancelButton: true,
+        didClose : () => {
+            setTimeout(() =>  refs.nroserie.focus(), 110);
+        }
+    }).then((result) => {
+        console.log( result );
+        if (result.isConfirmed && result.value !== "")
+            mostrarProducto(productos[result.value], refs);
+        else
+            restablecerFormulario( refs );
+    });
+}
+
+function informarIngresado( refs ) {
+    restablecerFormulario ( refs );
+    soundPlay('success');
+}
+
+function restablecerFormulario( refs ) {
+    refs.familia.value = '';
+    refs.descripcion.value = '';
+    refs.codunix.value = '';
+    refs.codunico.value = '';
+    refs.marca.value = '';
+    refs.nroserie.value = '';
+    refs.nroserie.disabled = true;
+    refs.ean.value = '';
+    refs.ean.focus();
+    refs.show.style.display = 'none';
+}
+
+function soundPlay( type ) {
+    const audio = document.getElementById( type );
+    if (!audio.paused) {
+        audio.pause();
+        audio.currentTime = 0;
+    }
+    audio.play();
+}

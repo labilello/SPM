@@ -28,7 +28,6 @@ class Shipment extends Component
     public function mount(ShipmentModel $shipment) {
         $this->shipment = $shipment;
         $this->repairs = $shipment->repairs;
-
     }
 
     public function render()
@@ -39,6 +38,9 @@ class Shipment extends Component
     }
 
     public function cancelShipProduct ($id) {
+        if( $this->shipment->is_closed )
+            return;
+
         try {
             $repair = Repair::find( $id );
             $repair->shipment_id = null;
@@ -56,12 +58,18 @@ class Shipment extends Component
     }
 
     public function removerReparacion( $id ) {
+        if( $this->shipment->is_closed )
+            return;
+
         $this->repairs = ($this->repairs->filter(function($item) use($id) {
             return $item->id != $id;
         }))->values();
     }
 
     public function cancelAllShipment () {
+        if( $this->shipment->is_closed )
+            return;
+
         foreach ($this->repairs as $repair)
             $this->cancelShipProduct( $repair->id );
 
@@ -69,10 +77,11 @@ class Shipment extends Component
             alert()->success('Remito eliminado con exito. Todas las reparaciones fueron devueltas a su estado anterios', 'Remito eliminado');
             return Redirect::route('vista.egresos.index');
         } else
-            $this->crearAlerta()
-                ->message('No se ha podido eliminar el remito. Reintente nuevamente recargando la pagina o consulta con el administrador.', 'Imposible eliminar remito', 'error')
-                ->autoclose(3000)
-                ->getDataToDispatch(); // CONVERTIR A TOAST
+            $this->crearAlerta('No se ha podido eliminar el remito. Reintente nuevamente recargando la pagina o consulta con el administrador.',
+                'Imposible eliminar remito',
+                'error')
+                ->toast()
+                ->getDataToDispatch();
 
     }
 
@@ -80,16 +89,16 @@ class Shipment extends Component
         if( $this->shipment->is_closed )
             return;
 
-
         $repair = Repair::where('nro_serie', $nroSerie)->whereHas('status', function (Builder $query){
             $query->where('descripcion', 'Reparado');
         })->first();
 
         if(! $repair)
-            $this->crearAlerta()
-                ->message('No se ha encontrado una reparacion para despachar con el numero de serie indicado', 'Imposible cargar reparacion', 'error')
-                ->autoclose(3000)
-                ->getDataToDispatch(); // CONVERTIR A TOAST
+            $this->crearAlerta('Revise que la reparación para el numero de serie ingresado ya se encuentre reparada',
+                'No se ha encontrado una reparacion para despachar con el numero de serie indicado',
+                'error')
+                ->toast()
+                ->getDataToDispatch();
         else {
             $repair->shipment_id = $this->shipment->id;
             $repair->date_out = now();
@@ -105,15 +114,16 @@ class Shipment extends Component
             $repair->save();
 
             $this->repairs->push( $repair );
+            $this->crearAlerta('',
+                'Elemento agregado al remito',
+                'success')
+                ->toast()
+                ->getDataToDispatch();
         }
     }
 
     public function downloadPDF() {
-//        $pdf = new DOMPDF();
-//        $pdf->set_paper("A4", "portrait");
-//        $pdf->load_html( view('egresos.PDFremito', ['shipment' => $this->shipment]));
         $pdf = PDF::loadView('egresos.PDFremito', ['shipment' => $this->shipment] );
-//        $pdf->render();
         return $pdf->download($this->shipment->name . '-remito.pdf');
     }
 

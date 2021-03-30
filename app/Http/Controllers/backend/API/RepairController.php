@@ -26,8 +26,4 @@ class RepairController extends Controller
         return response($result, 200, ['Content-Type: application/json']);
     }
 
-    public function egresar(Repair $repair = null)
-    {
-
-    }
 }

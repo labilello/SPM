@@ -85,35 +85,32 @@
     <script src="{{ asset('js/egresos.js') }}"></script>
 
     @include('sweet::alert')
+    <audio id="success" src="{{ asset('src/correcto.mp3') }}" preload="auto"></audio>
+    <audio id="error" src="{{ asset('src/error.mp3') }}" preload="auto"></audio>
+
     <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-
-        window.addEventListener('swal:modal', event => {
-            Swal.fire( event.detail );
-        });
-
-        window.addEventListener('swal:confirm', event => {
-            swal({
-                title: event.detail.message,
-                text: event.detail.text,
-                icon: event.detail.type,
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    window.livewire.emit('remove');
-                }
-            });
-        });
 
 
-        // Swal.bindClickHandler('data-swal-template-asd');
-        Swal.mixin({
-            toast: false,
-        }).bindClickHandler('data-swal-template-asd')
+        // window.addEventListener('swal:confirm', event => {
+        //     swal({
+        //         title: event.detail.message,
+        //         text: event.detail.text,
+        //         icon: event.detail.type,
+        //         buttons: true,
+        //         dangerMode: true,
+        //     })
+        //     .then((willDelete) => {
+        //         if (willDelete) {
+        //             window.livewire.emit('remove');
+        //         }
+        //     });
+        // });
+        //
+        //
+        // // Swal.bindClickHandler('data-swal-template-asd');
+        // Swal.mixin({
+        //     toast: false,
+        // }).bindClickHandler('data-swal-template-asd')
     </script>
 
     </body>
