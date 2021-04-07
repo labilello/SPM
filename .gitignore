@@ -10,6 +10,11 @@ app/storage/
 # Laravel 5 & Lumen specific
 public/storage
 public/hot
+public/css
+public/js
+public/uploads
+public/vendor
+public/webfonts
 
 # Laravel 5 & Lumen specific with changed public path
 public_html/storage
@@ -21,3 +26,24 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+*.lock
+package-lock.json
+public/mix-manifest.json
+public/css/app.css
+public/js/app.js
+public/js/app.js.LICENSE.txt
+public/mix-manifest.json
+public/uploads/basestock.csv
+public/vendor/livewire/livewire.js
+public/vendor/livewire/livewire.js.map
+public/vendor/livewire/manifest.json
+*.lock
+package-lock.json
+public/css/app.css
+public/js/app.js
+public/js/app.js.LICENSE.txt
+public/mix-manifest.json
+public/uploads/basestock.csv
+public/vendor/livewire/livewire.js
+public/vendor/livewire/livewire.js.map
+public/vendor/livewire/manifest.json

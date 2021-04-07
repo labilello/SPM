@@ -1,4 +1,4 @@
-
+﻿
 
 {{--    <audio id="audio" controls>--}}
 {{--        <source type="audio/wav" src="{{ asset('src/error.wav') }}">--}}
@@ -103,13 +103,13 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($repairs as $n=>$repair)
+			@for($n = count($repairs) - 1; $n >= 0; $n--)
                 <tr>
-                    <th class="py-1 align-middle" scope="row">{{ $n + 1 }}</th>
-                    <td class="py-1 align-middle">{{ $repair->product->descripcion }}</td>
-                    <td class="py-1 align-middle">{{ $repair->nro_serie }}</td>
+                    <th class="py-1 align-middle" scope="row">{{ $repairs[ $n ]->id }}</th>
+                    <td class="py-1 align-middle">{{ $repairs[ $n ]->product->descripcion }}</td>
+                    <td class="py-1 align-middle">{{ $repairs[ $n ]->nro_serie }}</td>
                     <td class="text-center py-1 align-middle">
-                        @if($repair->is_repair === true)
+                        @if($repairs[ $n ]->is_repair === true)
                             <i class="far fa-check-circle align-middle" style="color: #00cc66; font-size: 20px"></i>
                         @else
                             <i class="far fa-times-circle align-middle" style="color: red; font-size: 20px"></i>
@@ -122,7 +122,7 @@
                             </button>
                         @else
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-sm btn-danger" wire:click="cancelShipProduct({{$repair->id}})">
+                            <button type="button" class="btn btn-sm btn-danger" wire:click="cancelShipProduct({{$repairs[ $n ]->id}})">
                                 <i class="fas fa-trash"></i>
                             </button>
                         @endif
@@ -132,7 +132,7 @@
 {{--                            <div class="modal-dialog">--}}
 {{--                                <div class="modal-content">--}}
 {{--                                    <div class="modal-header">--}}
-{{--                                        <h5 class="modal-title" id="staticBackdropLabel">Deshaciendo envío de {{ $repair->product->descripcion }}</h5>--}}
+{{--                                        <h5 class="modal-title" id="staticBackdropLabel">Deshaciendo envío de {{ $repairs[ $n ]->product->descripcion }}</h5>--}}
 {{--                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
 {{--                                            <span aria-hidden="true">&times;</span>--}}
 {{--                                        </button>--}}
@@ -142,14 +142,14 @@
 {{--                                    </div>--}}
 {{--                                    <div class="modal-footer">--}}
 {{--                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>--}}
-{{--                                        <button type="button" wire:click="cancelShipProduct({{$repair->id}})" class="btn btn-danger">Eliminar</button>--}}
+{{--                                        <button type="button" wire:click="cancelShipProduct({{$repairs[ $n ]->id}})" class="btn btn-danger">Eliminar</button>--}}
 {{--                                    </div>--}}
 {{--                                </div>--}}
 {{--                            </div>--}}
 {{--                        </div>--}}
                     </td>
                 </tr>
-            @endforeach
+            @endfor
             </tbody>
         </table>
     </div>
