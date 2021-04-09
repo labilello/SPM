@@ -27,11 +27,6 @@ class ProductosTable extends LivewireDatatable
             Column::name('familia')->label('Familia')->searchable()->filterable(),
             Column::name('codigo_barras')->label('Cod. Barras')->searchable()->filterable()->editable(),
             Column::name('codigo_unico')->label('Cod. Unico')->filterable(),
-
-//            Column::callback(['id'], function ($id) {
-//                return view('reparaciones.table-actions', ['id' => $id]);
-//            })->label('Acciones'),
-
         ];
     }
 }

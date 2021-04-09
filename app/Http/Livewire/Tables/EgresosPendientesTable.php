@@ -13,7 +13,6 @@ class EgresosPendientesTable extends LivewireDatatable
 {
     public $hideable = 'select';
     public $exportable = true;
-//    public $afterTableSlot = 'components.selected';
 
     public function builder()
     {
@@ -25,7 +24,7 @@ class EgresosPendientesTable extends LivewireDatatable
     {
         return [
 
-            NumberColumn::name('id')->label('#')->filterable(),
+            NumberColumn::name('id')->label('#')->filterable()->alignCenter(),
 
             Column::name('product.descripcion')->label('Producto')->searchable()->filterable(),
 

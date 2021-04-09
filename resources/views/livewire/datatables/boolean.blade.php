@@ -1,7 +1,9 @@
-<div>
-@if($value)
-    <x-icons.check-circle class="text-green-600 mx-auto" />
+<div class="d-flex justify-content-around align-items-center">
+@if($value === 0)
+    <x-icons.x-circle class="text-danger font-weight-bold" />
+@elseif($value === 1)
+    <x-icons.check-circle class="text-success font-weight-bold" />
 @else
-    <x-icons.x-circle class="text-red-300 mx-auto" />
+    -
 @endif
 </div>

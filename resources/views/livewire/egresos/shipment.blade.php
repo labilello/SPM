@@ -103,11 +103,12 @@
             </tr>
             </thead>
             <tbody>
-			@for($n = count($repairs) - 1; $n >= 0; $n--)
+{{--            @for($n = count($repairs) - 1; $n >= 0; $n--)--}}
+            @foreach($repairs as $repair)
                 <tr>
-                    <th class="py-1 align-middle" scope="row">{{ $repairs[ $n ]->id }}</th>
-                    <td class="py-1 align-middle">{{ $repairs[ $n ]->product->descripcion }}</td>
-                    <td class="py-1 align-middle">{{ $repairs[ $n ]->nro_serie }}</td>
+                    <th class="py-1 align-middle" scope="row">{{ $repair->id }}</th>
+                    <td class="py-1 align-middle">{{ $repair->product->descripcion }}</td>
+                    <td class="py-1 align-middle">{{ $repair->nro_serie }}</td>
                     <td class="text-center py-1 align-middle">
                         @if($repairs[ $n ]->is_repair === true)
                             <i class="far fa-check-circle align-middle" style="color: #00cc66; font-size: 20px"></i>
@@ -149,8 +150,10 @@
 {{--                        </div>--}}
                     </td>
                 </tr>
-            @endfor
+{{--            @endfor--}}
+            @endforeach
             </tbody>
+
         </table>
     </div>
 

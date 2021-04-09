@@ -208,7 +208,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.data.extractors.current.export.id" value="SQL Updates" />
     <property name="database.data.extractors.current.id" value="SQL Updates" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/vendor/pagination" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/egresos" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
@@ -216,18 +216,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\entorno-prog\SPM-master\resources\views\egresos" />
+      <recent name="C:\entorno-prog\SPM-master\resources\views\reportes" />
       <recent name="C:\entornoPHP\SPM-master\resources\views\vendor\pagination" />
       <recent name="C:\entornoPHP\SPM-master\resources\views\makepc" />
       <recent name="C:\entornoPHP\SPM-master\app\Http\Controllers\backend" />
-      <recent name="C:\entornoPHP\SPM-master\storage\app\public\images" />
-      <recent name="C:\entornoPHP\SPM-master\resources\views\reportes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\entorno-prog\SPM-master\resources\views\reportes" />
+      <recent name="C:\entorno-prog\SPM-master\resources\views\livewire\reportes" />
       <recent name="C:\entorno-prog\SPM-master\app\Http\Livewire\Tables" />
       <recent name="C:\entorno-prog\SPM-master\storage\app\public\images" />
       <recent name="C:\entorno-prog\SPM-master\storage\app" />
-      <recent name="C:\entorno-prog\SPM-master\app\Http\Traits" />
-      <recent name="C:\entorno-prog\SPM-master\app\Http" />
     </key>
   </component>
   <component name="RunManager">
@@ -307,7 +307,13 @@
       <workItem from="1616762827942" duration="7040000" />
       <workItem from="1616793899846" duration="78000" />
       <workItem from="1617030023747" duration="21176000" />
-      <workItem from="1617115375427" duration="1908000" />
+      <workItem from="1617115375427" duration="5965000" />
+      <workItem from="1617198858965" duration="6572000" />
+      <workItem from="1617628737975" duration="16316000" />
+      <workItem from="1617719632475" duration="14222000" />
+      <workItem from="1617799072461" duration="11331000" />
+      <workItem from="1617889420732" duration="22284000" />
+      <workItem from="1617972443076" duration="8997000" />
     </task>
     <servers />
   </component>

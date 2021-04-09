@@ -340,6 +340,18 @@ function restablecerFormulario( refs ) {
     refs.show.style.display = 'none';
 }
 
+function mostrarNotaReparacion( nota ) {
+    Swal.fire({
+        title: 'Nota de reparacion',
+        text: nota,
+        allowOutsideClick: true,
+        showCloseButton: true,
+        showConfirmButton: false,
+        showCancelButton: true,
+        cancelButtonText: 'Cerrar',
+    });
+}
+
 function soundPlay( type ) {
     const audio = document.getElementById( type );
     if (!audio.paused) {

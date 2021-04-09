@@ -83,10 +83,14 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/egresos.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js" integrity="sha512-dnUg2JxjlVoXHVdSMWDYm2Y5xcIrJg1N+juOuRi0yLVkku/g26rwHwysJDAMwahaDfRpr1AxFz43ktuMPr/l1A==" crossorigin="anonymous"></script>
+
 
     @include('sweet::alert')
     <audio id="success" src="{{ asset('src/correcto.mp3') }}" preload="auto"></audio>
     <audio id="error" src="{{ asset('src/error.mp3') }}" preload="auto"></audio>
+
+    @stack('custom-scripts')
 
     <script>
 

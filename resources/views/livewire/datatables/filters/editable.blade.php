@@ -8,8 +8,9 @@
     />
     <div class="d-flex flex-wrap mt-1">
         @foreach($this->activeTextFilters[$index] ?? [] as $key => $value)
-        <button wire:click="removeTextFilter('{{ $index }}', '{{ $key }}')" class="text-sm btn btn-sm btn-outline-secondary ml-1 mt-1 text-uppercase">
-            <span>{{ $this->getDisplayValue($index, $value) }}</span>
+        <button wire:click="removeTextFilter('{{ $index }}', '{{ $key }}')"
+                class="btn btn-sm btn-outline-secondary mt-1 text-uppercase d-flex align-items-center text-sm">
+            <span class="mr-2">{{ $this->getDisplayValue($index, $value) }}</span>
             <x-icons.x-circle />
         </button>
         @endforeach

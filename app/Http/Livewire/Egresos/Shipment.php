@@ -27,7 +27,7 @@ class Shipment extends Component
 
     public function mount(ShipmentModel $shipment) {
         $this->shipment = $shipment;
-        $this->repairs = $shipment->repairs;
+        $this->repairs = $shipment->repairs()->orderBy('updated_at', 'desc')->get();
     }
 
     public function render()
@@ -64,6 +64,12 @@ class Shipment extends Component
         $this->repairs = ($this->repairs->filter(function($item) use($id) {
             return $item->id != $id;
         }))->values();
+
+        $this->crearAlerta('Reparacion eliminada del remito. Recuerda devolver el producto a deposito.',
+            'Remito eliminado',
+            'success')
+            ->toast()
+            ->getDataToDispatch();
     }
 
     public function cancelAllShipment () {
@@ -113,13 +119,15 @@ class Shipment extends Component
             $movimiento->save();
             $repair->save();
 
-            $this->repairs->push( $repair );
+            $this->repairs->prepend( $repair );
             $this->crearAlerta('',
                 'Elemento agregado al remito',
                 'success')
                 ->toast()
                 ->getDataToDispatch();
         }
+
+
     }
 
     public function downloadPDF() {

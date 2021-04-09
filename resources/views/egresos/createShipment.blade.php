@@ -2,15 +2,10 @@
 
 @section('content')
 
-{{--    <audio id="audio" controls>--}}
-{{--        <source type="audio/wav" src="{{ asset('src/error.wav') }}">--}}
-{{--        Your browser does not support the audio element.--}}
-{{--    </audio>--}}
-
     <div class="container-sm">
         <div class="d-flex justify-content-between align-items-center">
             <h2 class="text-center text-uppercase text-primary font-weight-bold">Envío de productos ya inspeccionados</h2>
-            <a class="btn btn-danger font-weight-bold my-auto" href="{{ route('vista.egresos.cerrados') }}" role="button">Remitos cerrados</a>
+            <a class="btn btn-danger font-weight-bold my-auto" href="{{ route('vista.egresos.cerrados') }}" role="button">Todos los remitos</a>
         </div>
 
         <hr>
@@ -25,7 +20,7 @@
                     <span class="text-muted">Envíos sin cerrar</span>
                     <span class="badge badge-secondary badge-pill">{{ $shipments->count() }}</span>
                 </h4>
-                <div class="list-group overflow-scroll">
+                <div class="list-group overflow-scroll scrollbar-w-2 scrollbar-track-gray-lighter scrollbar-thumb-rounded scrollbar-thumb-gray">
                     @if( $shipments->count() > 0)
                         @foreach($shipments as $shipment)
                             <a href="{{ route('vista.egresos.envio', [$shipment]) }}" class="list-group-item list-group-item-action">

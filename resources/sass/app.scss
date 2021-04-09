@@ -10,6 +10,10 @@
 // Sweetalert2
 @import "~sweetalert2/src/sweetalert2";
 
+.line {
+    background: repeating-linear-gradient( to bottom, #eee, #eee 1px, #fff 1px, #fff 8% );
+}
+
 .bg-gray-50 {
     --bg-opacity: 1;
     background-color: #f9fafb;

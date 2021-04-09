@@ -27,11 +27,6 @@ Route::get('reportes/movimientos', 'frontend\MovementController@index')
     ->middleware('auth')
     ->name('vista.reportes.movimientos');
 
-Route::any('reportes/movimientos/agrupado', 'backend\ReportController@movementsAgruped')
-    ->middleware('auth')
-    ->name('vista.reportes.movimientos.agrupado');
-
-
 Route::get('reportes/productos', 'frontend\ProductController@index')
     ->middleware('auth')
     ->name('vista.reportes.productos');
@@ -39,11 +34,6 @@ Route::get('reportes/productos', 'frontend\ProductController@index')
 Route::get('reportes/reparaciones', 'frontend\ReportController@reparaciones')
     ->middleware('auth')
     ->name('vista.reportes.reparaciones');
-
-Route::any('reportes/reparaciones/agrupado', 'backend\ReportController@reparacionesAgruped')
-    ->middleware('auth')
-    ->name('vista.reportes.reparaciones.agrupado');
-
 
 
 //           *********************          //
@@ -97,7 +87,7 @@ Route::get('/egresos/envio/{shipment}', '\App\Http\Livewire\Egresos\Shipment')
     ->middleware('auth')
     ->name('vista.egresos.envio');
 
-Route::get('/egresos/cerrados', 'frontend\EgressController@remitosCerrados')
+Route::get('/egresos/remitos', 'frontend\EgressController@remitosCerrados')
     ->middleware('auth')
     ->name('vista.egresos.cerrados');
 
@@ -113,22 +103,20 @@ Route::get('/egresos/reparaciones/pendientes', 'frontend\EgressController@pendie
 
 //           *********************          //
 
-Route::get('filtro', 'backend\FilterController@filtroTabla')
-    ->middleware('auth')
-    ->name('vista.filtro');
+//Route::get('filtro', 'backend\FilterController@filtroTabla')
+//    ->middleware('auth')
+//    ->name('vista.filtro');
 
 
 // =============== BACKEND ===================
 
-Route::post('/reparaciones/pendientes/ingresar', 'backend\RepairController@ingresar')
-    ->middleware('auth')
-    ->name('accion.reparaciones.ingresar');
+//Route::post('/reparaciones/pendientes/ingresar', 'backend\RepairController@ingresar')
+//    ->middleware('auth')
+//    ->name('accion.reparaciones.ingresar');
 
 Route::patch('/reparaciones/reparar/{repair}', 'backend\RepairController@reparar')
     ->middleware('auth')
     ->name('accion.reparaciones.reparar');
-
-
 
 Route::patch('egresos/envio/{shipment}', 'backend\EgressController@cerrarShipment')
     ->middleware('auth')
@@ -143,17 +131,6 @@ Route::post('egresos/nuevo', 'backend\EgressController@nuevo')
 Route::post('/password/cambiar', 'Auth\ChangePasswordController@changePassword')
     ->middleware('auth')
     ->name('accion.password.change');
-
-
-/*** FILTROS ***/
-
-Route::post('/movimientos', 'backend\MovementController@filtro')
-    ->middleware('auth')
-    ->name('accion.filtro.movimientos');
-
-Route::post('/egresos/cerrados', 'backend\EgressController@filtro')
-    ->middleware('auth')
-    ->name('accion.filtro.remitos');
 
 
 //           *********************          //
