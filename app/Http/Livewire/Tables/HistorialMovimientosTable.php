@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire\Tables;
 
+use App\Exports\MyDatatableExport;
 use App\Movement;
 use App\User;
+use Maatwebsite\Excel\Facades\Excel;
 use Mediconesystems\LivewireDatatables\Column;
 use Mediconesystems\LivewireDatatables\DateColumn;
 use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
@@ -31,5 +33,11 @@ class HistorialMovimientosTable extends LivewireDatatable
             Column::name('repair.product.familia')->label('Familia')->searchable()->filterable(),
             Column::name('user.name')->label('Usuario')->filterable(),
         ];
+    }
+
+    public function export()
+    {
+        $this->forgetComputed();
+        return Excel::download(new MyDatatableExport($this->getQuery()->get(), $this->columns), 'Historial de Movimientos.xlsx');
     }
 }

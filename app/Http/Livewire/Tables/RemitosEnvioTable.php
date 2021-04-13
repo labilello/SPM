@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire\Tables;
 
+use App\Exports\MyDatatableExport;
 use App\Product;
 use App\Shipment;
+use Maatwebsite\Excel\Facades\Excel;
 use Mediconesystems\LivewireDatatables\BooleanColumn;
 use Mediconesystems\LivewireDatatables\Column;
 use Mediconesystems\LivewireDatatables\DateColumn;
@@ -42,5 +44,11 @@ class RemitosEnvioTable extends LivewireDatatable
 
     public function delete( $id ) {
         return;
+    }
+
+    public function export()
+    {
+        $this->forgetComputed();
+        return Excel::download(new MyDatatableExport($this->getQuery()->get(), $this->columns), 'Lista de Remitos.xlsx');
     }
 }

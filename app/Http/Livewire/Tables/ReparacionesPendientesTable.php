@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire\Tables;
 
+use App\Exports\MyDatatableExport;
 use App\Repair;
 use App\Status;
+use Maatwebsite\Excel\Facades\Excel;
 use Mediconesystems\LivewireDatatables\BooleanColumn;
 use Mediconesystems\LivewireDatatables\Column;
 use Mediconesystems\LivewireDatatables\DateColumn;
@@ -179,5 +181,10 @@ class ReparacionesPendientesTable extends LivewireDatatable
             $movement->delete();
         }
         $repair->delete();
+    }
+    public function export()
+    {
+        $this->forgetComputed();
+        return Excel::download(new MyDatatableExport($this->getQuery()->get(), $this->columns), 'Lista de Reparaciones Pendientes.xlsx');
     }
 }

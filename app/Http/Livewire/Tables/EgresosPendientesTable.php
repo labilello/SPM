@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire\Tables;
 
+use App\Exports\MyDatatableExport;
 use App\Repair;
 use App\Status;
+use Maatwebsite\Excel\Facades\Excel;
 use Mediconesystems\LivewireDatatables\Column;
 use Mediconesystems\LivewireDatatables\DateColumn;
 use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
@@ -46,5 +48,11 @@ class EgresosPendientesTable extends LivewireDatatable
 //        $repair = Repair::findOrFail( $id );
 //        dd('works');
 //        $repair->delete();
+    }
+
+    public function export()
+    {
+        $this->forgetComputed();
+        return Excel::download(new MyDatatableExport($this->getQuery()->get(), $this->columns), 'Lista de Reparaciones Pendientes de Egreso.xlsx');
     }
 }

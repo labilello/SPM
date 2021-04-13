@@ -2,9 +2,11 @@
 
 namespace App\Http\Livewire\Tables;
 
+use App\Exports\MyDatatableExport;
 use App\Http\Livewire\Reportes\GraficosReparaciones;
 use App\Product;
 use App\Repair;
+use Maatwebsite\Excel\Facades\Excel;
 use Mediconesystems\LivewireDatatables\BooleanColumn;
 use Mediconesystems\LivewireDatatables\Column;
 use Mediconesystems\LivewireDatatables\DateColumn;
@@ -49,4 +51,9 @@ class HistorialReparacionesTable extends LivewireDatatable
         ];
     }
 
+    public function export()
+    {
+        $this->forgetComputed();
+        return Excel::download(new MyDatatableExport($this->getQuery()->get(), $this->columns), 'Historial de Reparaciones.xlsx');
+    }
 }

@@ -52,7 +52,7 @@
                             <i class="far fa-question-circle" data-toggle="tooltip" data-placement="left" title="Listado de movimientos de reparaciones" style="color: #1f6fb2; font-size: 20px"></i>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <a href="{{ route('vista.reportes.productos') }}" class="btn btn-toolbar text-left mb-1" role="button">Listado de Productos</a>
+                            <a href="{{ route('vista.reportes.productos') }}" class="btn btn-toolbar text-left mb-1" role="button">Listado de productos</a>
                             <i class="far fa-question-circle" data-toggle="tooltip" data-placement="left" title="Listado de productos registrados" style="color: #1f6fb2; font-size: 20px"></i>
                         </div>
 

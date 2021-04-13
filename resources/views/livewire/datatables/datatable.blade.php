@@ -147,7 +147,7 @@
                                 @elseif($column['type'] === 'checkbox')
                                     @include('datatables::checkbox', ['value' => $result->checkbox_attribute])
                                 @else
-                                    <div wire:model="elementos"
+                                    <div
                                          class="px-3 py-1 whitespace-no-wrap text-sm leading-5 text-gray-900 d-table-cell @if($column['align'] === 'right') text-right @elseif($column['align'] === 'center') text-center @else text-left @endif">
                                         {!! $result->{$column['name']} !!}
                                     </div>

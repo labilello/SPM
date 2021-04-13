@@ -110,7 +110,7 @@
                     <td class="py-1 align-middle">{{ $repair->product->descripcion }}</td>
                     <td class="py-1 align-middle">{{ $repair->nro_serie }}</td>
                     <td class="text-center py-1 align-middle">
-                        @if($repairs[ $n ]->is_repair === true)
+                        @if($repair->is_repair === true)
                             <i class="far fa-check-circle align-middle" style="color: #00cc66; font-size: 20px"></i>
                         @else
                             <i class="far fa-times-circle align-middle" style="color: red; font-size: 20px"></i>
@@ -123,7 +123,7 @@
                             </button>
                         @else
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-sm btn-danger" wire:click="cancelShipProduct({{$repairs[ $n ]->id}})">
+                            <button type="button" class="btn btn-sm btn-danger" wire:click="cancelShipProduct({{$repair->id}})">
                                 <i class="fas fa-trash"></i>
                             </button>
                         @endif
