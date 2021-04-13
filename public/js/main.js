@@ -340,10 +340,11 @@ function restablecerFormulario( refs ) {
     refs.show.style.display = 'none';
 }
 
-function mostrarNotaReparacion( nota ) {
+function mostrarNotaReparacion( divNota ) {
+    console.log(divNota);
     Swal.fire({
         title: 'Nota de reparacion',
-        text: nota,
+        html: '<div class="text-left">' + divNota.innerText + '</div>',
         allowOutsideClick: true,
         showCloseButton: true,
         showConfirmButton: false,
