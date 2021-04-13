@@ -56,4 +56,14 @@ class HistorialReparacionesTable extends LivewireDatatable
         $this->forgetComputed();
         return Excel::download(new MyDatatableExport($this->getQuery()->get(), $this->columns), 'Historial de Reparaciones.xlsx');
     }
+
+    public function getResultsProperty()
+    {
+        $query = $this->getQuery();
+        $this->emit('tableUpdated', $query->get());
+
+        return $this->mapCallbacks(
+            $query->paginate($this->perPage)
+        );
+    }
 }
