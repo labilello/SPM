@@ -59,15 +59,15 @@ return [
         |
         */
         'properties'             => [
-            'creator'        => '',
+            'creator'        => 'Service Product Management Application',
             'lastModifiedBy' => '',
             'title'          => '',
             'description'    => '',
             'subject'        => '',
             'keywords'       => '',
             'category'       => '',
-            'manager'        => '',
-            'company'        => '',
+            'manager'        => 'Leandro Alexis bilello',
+            'company'        => 'TechGo by Compumundo',
         ],
     ],
 

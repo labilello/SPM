@@ -2,6 +2,7 @@
 
 namespace App\Exports;
 
+use Carbon\Carbon;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
@@ -11,6 +12,7 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\WithStyles;
 use Maatwebsite\Excel\Events\AfterSheet;
+use PhpOffice\PhpSpreadsheet\Shared\Date;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
 use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
@@ -143,7 +145,7 @@ class MyDatatableExport implements FromCollection, ShouldAutoSize, WithHeadings,
         $columns = [];
         for($i = 0; $i < count( $this->columns ); $i++ ) {
             $columnAxes = chr(65 + $i) . "2:" . chr(65 + $i) . ($this->collection->count() + 1);
-            $columns[ $columnAxes ] = $this->columns[ $i ][ 'type' ] == 'date' ? NumberFormat::FORMAT_DATE_DDMMYYYY : NumberFormat::FORMAT_NUMBER;
+            $columns[ $columnAxes ] = $this->columns[ $i ][ 'type' ] == 'date' ? NumberFormat::FORMAT_DATE_DATETIME : NumberFormat::FORMAT_NUMBER;
         }
         return $columns;
     }
@@ -161,6 +163,9 @@ class MyDatatableExport implements FromCollection, ShouldAutoSize, WithHeadings,
                     array_push($newObject, "Falso");
                 else
                     array_push($newObject, "Desconocido");
+            } elseif ( $this->columns[ $i ][ 'type' ] == 'date' && $object->{ $this->columns[$i]['name'] } != '' ){
+                $fechaCarbon = Carbon::createFromFormat('Y-m-d H:i:s', $object->{ $this->columns[$i]['name'] } );
+                array_push($newObject, Date::dateTimeToExcel( $fechaCarbon ) );
             } else
                 array_push($newObject, $object->{ $this->columns[$i]['name'] } );
 
