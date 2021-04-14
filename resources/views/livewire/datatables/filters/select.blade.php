@@ -3,7 +3,7 @@
         <select
             x-ref="select"
             name="{{ $name }}"
-            class="form-control form-control-sm"
+            class="form-control form-control-sm overflow-auto"
             wire:input="doSelectFilter('{{ $index }}', $event.target.value)"
             x-on:input="$refs.select.value=''"
         >

@@ -29,8 +29,8 @@ class HistorialReparacionesTable extends LivewireDatatable
     public function columns()
     {
         return [
-            NumberColumn::name('id')->label('#'),
-            DateColumn::name('date_in')->label('Fecha de Ingreso')->filterable()->format("d/m/Y H:i:s")->defaultSort('asc'),
+            Column::name('id')->label('#')->filterable(),
+            DateColumn::name('date_in')->label('Fecha de Ingreso')->filterable()->format("d/m/Y H:i:s"),
             DateColumn::name('date_out')->label('Fecha de Egreso')->filterable()->format("d/m/Y H:i:s"),
             Column::name('product.id')->label('Codigo')->filterable(),
             Column::name('product.descripcion')->label('Producto')->searchable()->filterable(),
@@ -65,5 +65,13 @@ class HistorialReparacionesTable extends LivewireDatatable
         return $this->mapCallbacks(
             $query->paginate($this->perPage)
         );
+    }
+
+    public function delete( $id ) {
+        $repair = Repair::findOrFail( $id );
+        foreach ($repair->movements as $movement) {
+            $movement->delete();
+        }
+        $repair->delete();
     }
 }

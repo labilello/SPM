@@ -1,13 +1,13 @@
 <div class="d-flex flex-column p-2">
     <div x-data class="w-full form-control form-control-sm d-flex align-items-center mb-1 p-0">
-        <input x-ref="input" type="date" class="h-full pl-2 bg-transparent border-0 text-muted flex-grow-1" wire:change="doDateFilterStart('{{ $index }}', $event.target.value)">
+        <input x-ref="input" type="date" class="h-full pl-2 bg-transparent border-0 text-muted overflow-auto" wire:change="doDateFilterStart('{{ $index }}', $event.target.value)">
         <button x-on:click="$refs.input.value=''" wire:click="doDateFilterStart('{{ $index }}', '')"
                 class="pr-2 btn btn-sm p-0 focus:outline-none ml-1" type="button" tabindex="-1">
             <x-icons.x-circle class="h-3 w-3 stroke-current text-secondary" />
         </button>
     </div>
     <div x-data class="w-full form-control form-control-sm d-flex align-items-center p-0">
-        <input x-ref="input" type="date" class="h-full pl-2 bg-transparent border-0 text-muted flex-grow-1" wire:change="doDateFilterEnd('{{ $index }}', $event.target.value)">
+        <input x-ref="input" type="date" class="h-full pl-2 bg-transparent border-0 text-muted overflow-auto" wire:change="doDateFilterEnd('{{ $index }}', $event.target.value)">
         <button x-on:click="$refs.input.value=''" wire:click="doDateFilterEnd('{{ $index }}', '')"
                 class="pr-2 btn btn-sm p-0 focus:outline-none ml-1" type="button" tabindex="-1">
             <x-icons.x-circle class="h-3 w-3 stroke-current text-secondary" />

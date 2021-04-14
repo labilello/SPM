@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Tables;
 
 use App\Exports\MyDatatableExport;
+use App\Http\Traits\SweetAlertLive;
 use App\Repair;
 use App\Status;
 use Maatwebsite\Excel\Facades\Excel;
@@ -13,6 +14,7 @@ use Mediconesystems\LivewireDatatables\NumberColumn;
 
 class EgresosPendientesTable extends LivewireDatatable
 {
+    use SweetAlertLive;
     public $hideable = 'select';
     public $exportable = true;
 
@@ -26,7 +28,7 @@ class EgresosPendientesTable extends LivewireDatatable
     {
         return [
 
-            NumberColumn::name('id')->label('#')->filterable()->alignCenter(),
+            Column::name('id')->label('#')->filterable()->alignCenter(),
 
             Column::name('product.descripcion')->label('Producto')->searchable()->filterable(),
 
@@ -36,18 +38,44 @@ class EgresosPendientesTable extends LivewireDatatable
 
             Column::name('nro_serie')->label('Nro. Serie')->searchable()->filterable()->editable(),
 
-//            Column::callback(['id'], function ($id) {
-//                return view('reparaciones.table-actions', ['id' => $id]);
-//            })->label('Acciones'),
+            Column::callback(['id'], function ($id) {
+                return view('egresos.reparacionespendientes-table-actions', ['id' => $id]);
+            })->label('Acciones'),
 
         ];
     }
 
     public function delete( $id ) {
-        dd($this->columns);
-//        $repair = Repair::findOrFail( $id );
-//        dd('works');
-//        $repair->delete();
+        $repair = Repair::findOrFail( $id );
+        foreach ($repair->movements as $movement) {
+            $movement->delete();
+        }
+        $repair->delete();
+    }
+
+    public function edited($value, $table, $column, $rowId)
+    {
+        if( $column != 'nro_serie' ) {
+            $this->emit('fieldEdited', $rowId);
+            return;
+        }
+
+        $repair = Repair::findOrFail( $rowId );
+        $repairsWithSameValue = Repair::where('nro_serie', $value)->where('status_id', '<>', 3)->get();
+
+        if( $repairsWithSameValue->count() > 0 ) {
+            $this->crearAlerta('No se ha podido actualizar debido a que ya existe una reparacion en progreso con ese mismo numero de serie.',
+                'Imposible modificar',
+                'error')
+                ->toast()
+                ->getDataToDispatch();
+            return;
+        }
+
+        $repair->nro_serie = $value;
+        $repair->save();
+
+        $this->emit('fieldEdited', $rowId);
     }
 
     public function export()

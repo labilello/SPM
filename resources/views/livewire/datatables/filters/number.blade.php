@@ -29,25 +29,25 @@
 {{--        </div>--}}
 {{--    </div>--}}
 
-    <div x-data class="w-full form-control form-control-sm d-flex align-items-center mb-1 p-0">
+    <div x-data class="form-control form-control-sm d-flex align-items-center mb-1 p-0" style="width: fit-content;">
         <input
             x-ref="input"
             type="number"
             wire:input.debounce.500ms="doNumberFilterStart('{{ $index }}', $event.target.value)"
             placeholder="MIN"
-            class="h-full pl-2 bg-transparent border-0 text-muted flex-grow-1">
+            class="h-full pl-2 bg-transparent border-0 text-muted overflow-auto" style="min-width: 20px">
         <button x-on:click="$refs.input.value=''" wire:click="doNumberFilterStart('{{ $index }}', '')"
                 class="btn btn-sm p-0 pr-2 focus:outline-none ml-1" type="button" tabindex="-1">
             <x-icons.x-circle class="h-3 w-3 stroke-current text-secondary" />
         </button>
     </div>
-    <div x-data class="w-full form-control form-control-sm d-flex align-items-center p-0">
+    <div x-data class="form-control form-control-sm d-flex align-items-center p-0">
         <input
             x-ref="input"
             type="number"
             wire:input.debounce.500ms="doNumberFilterEnd('{{ $index }}', $event.target.value)"
             placeholder="MAX"
-            class="h-full pl-2 bg-transparent border-0 text-muted flex-grow-1">
+            class="h-full pl-2 bg-transparent border-0 text-muted overflow-auto">
         <button x-on:click="$refs.input.value=''" wire:click="doNumberFilterEnd('{{ $index }}', '')"
                 class="btn btn-sm p-0 pr-2 focus:outline-none ml-1" type="button" tabindex="-1">
             <x-icons.x-circle class="h-3 w-3 stroke-current text-secondary" />

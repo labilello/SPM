@@ -22,7 +22,6 @@ class ProductosTable extends LivewireDatatable
     public function columns()
     {
         return [
-
             Column::name('id')->label('Cod. Unix')->filterable(),
             Column::name('descripcion')->label('Producto')->searchable()->filterable(),
             Column::name('marca')->label('Marca')->searchable()->filterable(),

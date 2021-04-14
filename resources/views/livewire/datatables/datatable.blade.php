@@ -76,7 +76,7 @@
             <div
                 class="rounded-lg                                  @unless($this->hidePagination) rounded-b-none @endif">
                 <!-- TABLE DESIGN -->
-                <div class="d-table align-middle w-full          min-w-full">
+                <div class="d-table align-middle w-full          min-w-full" >
                     @unless($this->hideHeader)
                         <div class="d-table-row divide-x divide-gray-200">
                             <!-- HEADER -->
@@ -148,7 +148,7 @@
                                     @include('datatables::checkbox', ['value' => $result->checkbox_attribute])
                                 @else
                                     <div
-                                         class="px-3 py-1 whitespace-no-wrap text-sm leading-5 text-gray-900 d-table-cell @if($column['align'] === 'right') text-right @elseif($column['align'] === 'center') text-center @else text-left @endif">
+                                         class="px-3 py-1 align-middle whitespace-no-wrap text-sm leading-5 text-gray-900 d-table-cell @if($column['align'] === 'right') text-right @elseif($column['align'] === 'center') text-center @else text-left @endif">
                                         {!! $result->{$column['name']} !!}
                                     </div>
                                 @endif

@@ -25,12 +25,13 @@ class HistorialMovimientosTable extends LivewireDatatable
     public function columns()
     {
         return [
-            NumberColumn::name('id')->label('#'),
+            Column::name('id')->label('#')->filterable()->alignCenter(),
             Column::name('status.descripcion')->label('Tipo de Movimiento')->searchable()->filterable(['Ingresado', 'Reparado', 'Egresado'])->alignCenter(),
             DateColumn::name('created_at')->label('Fecha')->filterable()->format("d/m/Y H:i:s"),
-            Column::name('repair.product.descripcion')->label('Producto'),
+            Column::name('repair.product.descripcion')->label('Producto')->filterable(),
             Column::name('repair.nro_serie')->label('Nro. Serie')->filterable()->searchable(),
             Column::name('repair.product.familia')->label('Familia')->searchable()->filterable(),
+            NumberColumn::name('repair.id')->label('# Reparacion')->filterable()->alignCenter(),
             Column::name('user.name')->label('Usuario')->filterable(),
         ];
     }
